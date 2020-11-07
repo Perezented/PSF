@@ -118,9 +118,20 @@ html {
     text-shadow: 0 0 9px black;
   }
 }
+@mixin background($url) {
+  background: linear-gradient(
+      #00000070,
+      #00000090,
+      #00000090,
+      #00000090,
+      #00000070
+    ),
+    url($url);
+  background-size: cover;
+}
 .homeTriDesc {
   width: 80%;
-  margin: 0 auto;
+  margin: 1% auto;
   h2 {
     margin: 3% 0;
   }
@@ -128,19 +139,36 @@ html {
   .triSection {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1%;
-    border: 1px solid goldenrod;
+    gap: 2%;
+    color: white;
+    .hospitals {
+      @include background("./styles/img/IMG_0335.JPG");
+    }
+    .school {
+      @include background("./styles/img/IMG_4081.JPG");
+    }
+    .floortypes {
+      @include background("./styles/img/IMG_3349.JPG");
+    }
     div {
-      border: hotpink 1px solid;
       padding: 2%;
     }
     p {
       padding: 10%;
       line-height: 3.5rem;
-      font-size: 1.6rem;
+      font-size: 1.7rem;
     }
     i {
       padding: 3%;
     }
   }
+}
+.spacer {
+  @include background("./styles/img/IMG_3349.JPG");
+  height: 20vh;
+  background-position-y: 80%;
+  z-index: -1;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 100%;
 }
