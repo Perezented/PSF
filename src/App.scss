@@ -197,26 +197,57 @@ html {
     display: grid;
     height: 150vh;
     gap: 1%;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     div {
       display: flex;
       justify-content: center;
       align-items: center;
       h2 {
-        font-size: 5rem;
+        font-size: 4rem;
+        text-shadow: 0 0 15px black;
       }
     }
   }
-  .ceramic {
-    grid-area: 4/2/5/4;
-    @include lighterBackground("./styles/img/IMG_1800.JPG");
+  .gridHolder .ceramic {
+    grid-area: 3/3/5/5;
     background-position-y: 90%;
+    // @include lighterBackground("./styles/img/IMG_1800.JPG");
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    h2 {
+      grid-area: 2/1/4/4;
+      z-index: 1;
+    }
+    div {
+      width: 100%;
+      height: 100%;
+      border: 1px solid white;
+    }
+    .subCeramic0 {
+      @include lighterBackground("./styles/img/IMG_2378.JPG");
+      grid-area: 1/1/3/3;
+      background-position-y: 60%;
+    }
+    .subCeramic1 {
+      @include lighterBackground("./styles/img/IMG_1800.JPG");
+      grid-area: 3/1/5/3;
+      background-position-y: 50%;
+    }
   }
   .vct {
-    grid-area: 1/1/2/2;
+    grid-area: 5/1/6/2;
     @include lighterBackground("./styles/img/IMG_4597.JPG");
     background-position-y: 90%;
+  }
+  .flashcove {
+    grid-area: 1/2/2/3;
+    @include lighterBackground("./styles/img/IMG_4417.JPG");
+    background-position-y: 75%;
+    background-position-x: 50%;
+    background-size: 200%;
   }
   .leveling {
     grid-area: 4/1/5/2;
@@ -224,17 +255,45 @@ html {
     @include lighterBackground("./styles/img/IMG_4616.JPG");
   }
   .mrs {
-    grid-area: 1/2/2/3;
+    grid-area: 1/1/2/2;
     background-position-y: 90%;
     @include lighterBackground("./styles/img/IMG_0376.JPG");
   }
   .shotblast {
     grid-area: 2/1/4/3;
+    flex-direction: column;
     @include lighterBackground("./styles/img/IMG_3439.JPG");
+  }
+  .carpet {
+    grid-area: 4/2/5/3;
+    @include lighterBackground("./styles/img/IMG_3328.JPG");
+    background-position-y: bottom;
+    background-position-x: right;
+    background-size: 200%;
   }
   .bronco {
     grid-area: 1/3/3/4;
     @include lighterBackground("./styles/img/IMG_3439.JPG");
     background-position-x: 60%;
+    display: flex;
+    flex-direction: column;
   }
+  .vynal {
+    @include lighterBackground("./styles/img/IMG_0481.JPG");
+    grid-area: 1/4/3/5;
+    background-position-x: center;
+  }
+  .nora {
+    @include lighterBackground("./styles/img/IMG_4186.JPG");
+    grid-area: 5/2/6/4;
+    background-position-y: 50%;
+  }
+  .more {
+    @include lighterBackground("./styles/img/IMG_4012.JPG");
+    grid-area: 5/4/6/5;
+    display: flex;
+    flex-direction: column;
+    background-position-y: bottom;
+  }
+}
 }
