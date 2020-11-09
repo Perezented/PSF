@@ -5,6 +5,7 @@ export default function Header() {
     <section className="nav">
       <nav>
         <a href="/">Home</a>
+        <a href="gallery">Gallery</a>
         <a href="/about">About Us</a>
         <a href="contact">Contact Us</a>
       </nav>
