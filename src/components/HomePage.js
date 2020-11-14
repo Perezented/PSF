@@ -4,9 +4,14 @@ import Banner from "./Banner";
 import WeDoMore from "./WeDoMore";
 import Spacer from "./Spacer";
 export default function HomePage() {
+  let bannerInfo = [
+    "img0",
+    "Pro-Select Flooring LLC.",
+    "29+ Years of Experience"
+  ];
   return (
     <>
-      <Banner />
+      <Banner props={bannerInfo} />
       <TriSection />
       <Spacer />
       <WeDoMore />
