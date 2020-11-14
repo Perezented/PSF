@@ -134,18 +134,25 @@ html {
   z-index: -1;
   width: 100%;
 }
-.homepageBanner {
-  height: 45vh;
+
+.pageBanner {
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   h1,
   h3 {
-    margin: 1%;
+    margin: 1% auto;
     color: rgb(255, 255, 255);
     text-shadow: 0 0 9px black;
   }
+}
+.contactBannerSize {
+  height: 65vh;
+  justify-content: space-evenly;
+}
+.homepageBannerSize {
+  height: 45vh;
 }
 @mixin background($url) {
   background: linear-gradient(
