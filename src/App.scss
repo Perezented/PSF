@@ -324,3 +324,47 @@ html {
   }
   background-color: rgba(255, 8, 0, 1);
 }
+
+.contact {
+  div {
+    padding: 1%;
+  }
+  .businessHours {
+    address {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 80%;
+      padding: 1%;
+      margin: 0 0 1%;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+  .flex {
+    display: flex;
+    justify-content: center;
+    .form {
+      width: 30%;
+      display: grid;
+    }
+    .field {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+    input,
+    textarea {
+      width: 23vw;
+    }
+    label {
+      font-weight: 600;
+      font-size: 1.6rem;
+    }
+  }
+  h3,
+  h4 {
+    margin: 0;
+  }
+}
