@@ -5,7 +5,7 @@ export default function BusinessHours() {
       <address>
         <p>
           Call or text anytime! If we are not available, please leave a
-          voicemail.
+          voicemail or text message.
         </p>
         <p>We will respond: Mon-Fri 8am - 5pm</p>
         <div>
