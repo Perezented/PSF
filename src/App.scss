@@ -106,9 +106,23 @@ html {
 }
 .img0 {
   background: url("./styles/img/IMG_1778.JPG");
+  height: 45vh;
+  background-position-y: bottom;
+  filter: contrast(150%) drop-shadow(0px 8px 15px black);
 }
 .img1 {
-  background: url("./styles/img/IMG_1778.JPG");
+  background: url("./styles/img/IMG_0380.JPG");
+  height: 65vh;
+  background-position-y: 25%;
+  width: 100%;
+  filter: brightness(80%) drop-shadow(0px 8px 15px black);
+}
+.img2 {
+  background: url("./styles/img/IMG_0331.JPG");
+  height: 65vh;
+  background-position-y: 25%;
+  width: 100%;
+  filter: contrast(125%) drop-shadow(0px 8px 15px black);
 }
 .homeImg {
   background-size: cover;
