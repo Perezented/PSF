@@ -346,7 +346,13 @@ html {
   background-color: rgba(255, 8, 0, 1);
 }
 
-.contact {
+.contact,
+.join {
+  .contactMessage {
+    margin: 8vh auto 2vh;
+    font-size: 2rem;
+    width: 80%;
+  }
   div {
     padding: 1%;
   }
@@ -356,9 +362,9 @@ html {
       flex-direction: column;
       justify-content: space-between;
       height: 80%;
-      padding: 1%;
-      margin: 0 0 1%;
-
+      padding: 2%;
+      margin: 0 auto 1%;
+      width: 80%;
       p {
         margin: 0;
       }
@@ -387,5 +393,12 @@ html {
   h3,
   h4 {
     margin: 0;
+  }
+  .pageBanner {
+    h1,
+    h3 {
+      margin: 0 auto;
+      width: 80%;
+    }
   }
 }
