@@ -1,12 +1,12 @@
 import React from "react";
 import TriSection from "./TriSection";
-import HomeBanner from "./HomeBanner";
+import Banner from "./Banner";
 import WeDoMore from "./WeDoMore";
 import Spacer from "./Spacer";
 export default function HomePage() {
   return (
     <>
-      <HomeBanner />
+      <Banner />
       <TriSection />
       <Spacer />
       <WeDoMore />
