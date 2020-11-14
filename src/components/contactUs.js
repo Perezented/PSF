@@ -2,6 +2,7 @@ import emailjs from "emailjs-com";
 import React, { useState } from "react";
 import BusinessHours from "./BusinessHours";
 import Form from "./Form";
+import Banner from "./Banner";
 import ThankYouMessage from "./ThankYouMessage";
 
 export default function Contact() {
@@ -29,18 +30,17 @@ export default function Contact() {
       );
     e.target.reset();
   }
-  const style = {
-    display: "flex"
-  };
+
   return (
-    <section class="contact" id="contact">
+    <section className="contact" id="contact">
+      <Banner />
       <h2>Contact Pro-Select Flooring</h2>
       <p>
         Let us know if there is anything we can do for you and your company. Use
         the form below to get a hold of us directly through the email.
       </p>
       <ThankYouMessage props={thankYouMessage} />
-      <div className="flex" style={style}>
+      <div className="flex">
         <BusinessHours />
         <Form props={sendEmail} />
       </div>
