@@ -1,4 +1,5 @@
 html {
+  height: 100%;
   font-size: 62.5%;
   padding: 0;
   margin: 0;
@@ -27,6 +28,9 @@ html {
   }
   h6 {
     font-size: 2rem;
+  }
+  p {
+    font-size: 1.6rem;
   }
 }
 
@@ -69,7 +73,7 @@ html {
   }
 }
 .nav {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   background-color: rgba(255, 8, 0, 1);
   display: grid;
@@ -83,6 +87,10 @@ html {
   color: white;
   align-items: center;
   p {
+    a {
+      font-size: 2rem;
+      font-weight: 600;
+    }
     font-size: 1.9rem;
     font-weight: 600;
     text-align: right;
@@ -302,6 +310,7 @@ html {
 .footer {
   color: white;
   padding: 1% 0;
+  bottom: 0;
   a {
     color: white;
     font-size: 1.8rem;
