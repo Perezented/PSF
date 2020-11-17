@@ -6,30 +6,28 @@ import Contact from "./components/contactUs";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
+  const bannerInfo = {
+    contact: [
+      "img2",
+      "Contact Pro-Select Flooring",
+      "Have a question or a comment? Let us know if there is anything we can do for you and your company. Use the form below to get a hold of us directly through the email. We will respond as soon as possible."
+    ],
+    join: [
+      "img1",
+      "Join our team at Pro-Select Flooring",
+      "Would you like to assist and become the best of the best in the flooring business? Use the form below to get a hold of us directly through the email. We will respond as soon as possible."
+    ]
+  };
   return (
     <div className="App">
       <Header />
       <Router>
         <Route exact path="/" component={HomePage} />
         <Route path="/contact">
-          <Contact
-            bannerInfo={[
-              "img2",
-              "Contact Pro-Select Flooring",
-              "Let us know if there is anything we can do for you and your company. Use the form below to get a hold of us directly through the email."
-            ]}
-            classInfo={"contact"}
-          />
+          <Contact bannerInfo={bannerInfo["contact"]} classInfo={"contact"} />
         </Route>
         <Route path="/joinUs">
-          <Contact
-            bannerInfo={[
-              "img1",
-              "Join our team at Pro-Select Flooring",
-              "Would you like to assist the best of the best in the flooring business? Use the form below to get a hold of us directly through the email."
-            ]}
-            classInfo={"join"}
-          />
+          <Contact bannerInfo={bannerInfo["join"]} classInfo={"join"} />
         </Route>
       </Router>
       <Footer />
