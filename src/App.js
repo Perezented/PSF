@@ -4,6 +4,7 @@ import HomePage from "./components/HomePage";
 import Footer from "./components/Footer";
 import Contact from "./components/contactUs";
 import { Route, BrowserRouter as Router } from "react-router-dom";
+import Gallery from "./components/Gallery";
 
 function App() {
   const bannerInfo = {
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route path="/joinUs">
           <Contact bannerInfo={bannerInfo["join"]} classInfo={"join"} />
+        </Route>
+        <Route path="/gallery">
+          <Gallery />
         </Route>
       </Router>
       <Footer />
