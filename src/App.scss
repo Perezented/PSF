@@ -1,8 +1,9 @@
-html {
-  height: 100%;
-  font-size: 62.5%;
-  padding: 0;
+html,
+body {
   margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  height: 100%;
   h1,
   h2,
   h3,
@@ -72,10 +73,17 @@ html {
     transform: rotate(360deg);
   }
 }
+@mixin headerfootercolor {
+  background-color: rgba(173, 3, 3, 0.87);
+}
+@mixin contactsBannerHeight {
+  height: 60vh;
+}
 .nav {
-  position: absolute;
+  position: sticky;
+  top: 0;
   z-index: 1;
-  background-color: rgba(255, 8, 0, 1);
+  @include headerfootercolor;
   display: grid;
   grid-template-columns: 2fr 3fr;
   padding: 0.2% 10%;
@@ -112,14 +120,14 @@ html {
 }
 .img1 {
   background: url("./styles/img/IMG_0380.JPG");
-  height: 65vh;
-  background-position-y: 25%;
+  @include contactsBannerHeight;
+  background-position-y: 35%;
   width: 100%;
   filter: brightness(80%) drop-shadow(0px 8px 15px black);
 }
 .img2 {
   background: url("./styles/img/IMG_0331.JPG");
-  height: 65vh;
+  @include contactsBannerHeight;
   background-position-y: 25%;
   width: 100%;
   filter: contrast(125%) drop-shadow(0px 8px 15px black);
@@ -145,8 +153,8 @@ html {
   }
 }
 .contactBannerSize {
-  height: 65vh;
-  justify-content: space-evenly;
+  @include contactsBannerHeight;
+  justify-content: space-around;
 }
 .homepageBannerSize {
   height: 45vh;
@@ -327,7 +335,7 @@ html {
 }
 .footer {
   color: white;
-  padding: 1% 0;
+  padding: 4% 0 2%;
   bottom: 0;
   a {
     color: white;
@@ -340,7 +348,7 @@ html {
     width: 60%;
     margin: 0 auto 1%;
   }
-  background-color: rgba(255, 8, 0, 1);
+  @include headerfootercolor;
 }
 
 .contact,
