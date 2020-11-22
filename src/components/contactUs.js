@@ -15,12 +15,12 @@ export default function Contact(props) {
     }, 6000);
     setThankYouMessage(true);
     emailjs
-      .sendForm
-      // "service_r5la9ln", // REPLACE ME
-      // "template_h2o3mrf", // REPLACE ME
-      // e.target,
-      // "user_2WocCOhmC4a9o4yO5bwUB" // REPLACE ME
-      ()
+      .sendForm(
+      "service_xdxjlgs",
+      "template_v0pftvj",
+      e.target,
+      "user_2WocCOhmC4a9o4yO5bwUB"
+      
       .then(
         (result) => {
           console.log(result.text);
