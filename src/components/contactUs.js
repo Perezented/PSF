@@ -16,11 +16,12 @@ export default function Contact(props) {
     setThankYouMessage(true);
     emailjs
       .sendForm(
-      "service_xdxjlgs",
-      "template_v0pftvj",
-      e.target,
-      "user_2WocCOhmC4a9o4yO5bwUB"
-      
+        "service_xdxjlgs",
+        "template_v0pftvj",
+        e.target,
+        "user_2WocCOhmC4a9o4yO5bwUB"
+      )
+
       .then(
         (result) => {
           console.log(result.text);
