@@ -3,7 +3,10 @@ import React from "react";
 export default function Form(props) {
   return (
     <div className="form">
-      <form onSubmit={props.sendEmail}>
+      <h3>
+        {props.classInfo === "contact" ? "Let's Get in Touch" : "Join Our Team"}
+      </h3>
+      <form onSubmit={sendEmail}>
         <div className="fields">
           <div className="field">
             <label htmlFor="name">Name</label>
