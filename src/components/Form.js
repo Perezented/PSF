@@ -1,6 +1,33 @@
 import React from "react";
+import emailjs from "emailjs-com";
 
 export default function Form(props) {
+  console.log("form props: ", props);
+  function sendEmail(e) {
+    e.preventDefault();
+    setTimeout(() => {
+      // setThankYouMessage(false);
+    }, 6000);
+    // setThankYouMessage(true);
+    emailjs
+      .sendForm(
+        "service_xdxjlgs",
+        "template_v0pftvj",
+        e.target,
+        "user_2WocCOhmC4a9o4yO5bwUB"
+      )
+
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  }
+
   return (
     <div className="form">
       <h3>
