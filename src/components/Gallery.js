@@ -1,3 +1,5 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import img0 from "../styles/img/IMG_0331.JPG";
 
 export default function Gallery() {
