@@ -16,6 +16,18 @@ export default function Gallery() {
       });
   }, []);
 
+  let reactData = [];
+  function renderImages(array) {
+    console.log("renderImages", i);
+    while (i !== array.length) {
+      reactData.push(
+        <img src={array[i]} alt="" className="img0" key={array[i]} />
+      );
+      i++;
+    }
+
+    return reactData;
+  }
   return (
     <section className="gallery">
       <h1>This is going to to be the gallery section</h1>
