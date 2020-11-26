@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import img0 from "../styles/img/IMG_0331.JPG";
-
+import useWindowDimensions from "./helper/useWindowDimensions";
 export default function Gallery() {
   const [imgData, setImgData] = useState([]);
   const [images, setImages] = useState([]);
+  const { height, width } = useWindowDimensions();
   useEffect(() => {
     axios
       .get(`http://localhost:3030`)
