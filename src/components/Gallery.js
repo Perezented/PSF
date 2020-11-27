@@ -17,9 +17,24 @@ export default function Gallery() {
       });
   }, []);
 
+  let i = 1;
+
+  useEffect(() => {
+    function fitImages() {
+      imgData.slice(i, i + 10).forEach((value) => {
+        const curr_img_link = process.env.REACT_APP_.S3_LINK + value.Key;
+        const imgCopy = images;
+        imgCopy.push(curr_img_link);
+        setImages(imgCopy, <img src={curr_img_link} alt="" />);
+      });
+      i += 10;
+      return i;
+    }
+    fitImages();
+  console.log(images);
   let reactData = [];
   function renderImages(array) {
-    console.log("renderImages", i);
+    let i = 0;
     while (i !== array.length) {
       reactData.push(
         <img src={array[i]} alt="" className="img0" key={array[i]} />
@@ -33,8 +48,8 @@ export default function Gallery() {
     <section className="gallery">
       <h1>This is going to to be the gallery section</h1>
       <div className="cardContainer">
-        <h3>Image date</h3>
-        <img src={img0} alt="image of workers on bridge" className="img0" />
+        <img src={img0} alt="workers on bridge" className="img0" />
+        {images == [] ? "LOADING" : renderImages(images)}
       </div>
     </section>
   );
