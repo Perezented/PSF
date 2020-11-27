@@ -29,11 +29,7 @@ export default function useWindowDimensions() {
 const Component = () => {
   const { height, width } = useWindowDimensions();
 
-  return (
-    <div>
-      width: {width} ~ height: {height}
-    </div>
-  );
+  return <></>;
 };
 
 const rootElement = document.getElementById("root");
