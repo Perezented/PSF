@@ -9,6 +9,7 @@ export default function Gallery() {
   // error handling
   const [error, setError] = useState();
   // state for current scroll location and max window scroll available
+
   const [windowScroll, setWindowScroll] = useState(window.scrollY);
   const [maxWindowScroll, setMaxWindowScroll] = useState(
     document.documentElement.scrollHeight - window.innerHeight
@@ -33,13 +34,11 @@ export default function Gallery() {
       document.documentElement.scrollHeight - window.innerHeight
     );
   };
-
   const handleImageSliceCount = () => {
-    if (maxWindowScroll - 50 <= windowScroll) {
+    if (maxWindowScroll - maxWindowScroll / 15 <= windowScroll) {
       setImageSliceCounter(imageSliceCounter + 10);
     }
   };
-
   // On scroll, checks windowScroll and maxWindowScroll
   useEffect(() => {
     window.addEventListener("scroll", handleWindowScroll);
@@ -74,7 +73,6 @@ export default function Gallery() {
         <>
           <h4>ERROR</h4>
           {error}
-          {console.log(error)}
         </>
       ) : (
         <>
