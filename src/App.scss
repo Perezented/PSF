@@ -407,3 +407,20 @@ body {
     }
   }
 }
+@keyframes aniout {
+  from {
+    z-index: 5;
+    opacity: 1;
+  }
+  to {
+    z-index: -5;
+    opacity: 0;
+  }
+}
+.notFound {
+  animation: aniout 4s ease-in;
+  position: absolute;
+  color: white;
+  text-align: center;
+  width: 100vw;
+}
