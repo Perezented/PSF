@@ -70,10 +70,20 @@ export default function Gallery() {
   }
   return (
     <section className="gallery">
-      <h1>This is going to to be the gallery section</h1>
-      <div className="cardContainer">
-        {imgData ? fillImages() : <NotFound />}
-      </div>
+      {error ? (
+        <>
+          <h4>ERROR</h4>
+          {error}
+          {console.log(error)}
+        </>
+      ) : (
+        <>
+          <h1>This is going to to be the gallery section</h1>
+          <div className="cardContainer">
+            {imgData ? fillImages() : <NotFound />}
+          </div>
+        </>
+      )}
     </section>
   );
 }
