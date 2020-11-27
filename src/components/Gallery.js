@@ -72,8 +72,7 @@ export default function Gallery() {
     <section className="gallery">
       <h1>This is going to to be the gallery section</h1>
       <div className="cardContainer">
-        <img src={img0} alt="workers on bridge" className="img0" />
-        {images == [] ? "LOADING" : renderImages(images)}
+        {imgData ? fillImages() : <NotFound />}
       </div>
     </section>
   );
