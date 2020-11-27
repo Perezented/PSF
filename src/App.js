@@ -24,15 +24,16 @@ function App() {
       <Header />
       <Router>
         <Route exact path="/" component={HomePage} />
-        <Route path="/contact">
+        <Route exact path="/contact">
           <Contact bannerInfo={bannerInfo["contact"]} classInfo={"contact"} />
         </Route>
-        <Route path="/joinUs">
+        <Route exact path="/joinUs">
           <Contact bannerInfo={bannerInfo["join"]} classInfo={"join"} />
         </Route>
-        <Route path="/gallery">
+        <Route exact path="/gallery">
           <Gallery />
         </Route>
+        <Route component={HomePage} />
       </Router>
       <Footer />
     </div>
