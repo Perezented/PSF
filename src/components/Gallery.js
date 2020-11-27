@@ -50,7 +50,7 @@ export default function Gallery() {
     window.addEventListener("scroll", handleImageSliceCount);
   }, [windowScroll]);
 
-  let filler = {};
+  let imageLinks = {};
 
   // pushes links to image tags from s3, returns an object's values of html image elements
   function fillImages() {
@@ -59,14 +59,14 @@ export default function Gallery() {
     if (imgData.length > 0) {
       imgData.slice(1, count + 15).forEach((value) => {
         const curr_img_link = process.env.REACT_APP_.S3_LINK + value.Key;
-        if (!(value.Key in filler)) {
-          filler[value.Key] = (
+        if (!(value.Key in imageLinks)) {
+          imageLinks[value.Key] = (
             <img src={curr_img_link} alt="" key={value.Key} className="img0" />
           );
         }
       });
     }
-    return Object.values(filler);
+    return Object.values(imageLinks);
   }
   return (
     <section className="gallery">
