@@ -413,14 +413,15 @@ body {
     opacity: 1;
   }
   to {
-    z-index: -5;
     opacity: 0;
   }
 }
 .notFound {
-  animation: aniout 4s ease-in;
+  animation: aniout 8s ease-out;
   position: absolute;
+  font-size: 4rem;
   color: white;
   text-align: center;
   width: 100vw;
+  text-shadow: black 0 0 2px, white 0 0 5px;
 }
