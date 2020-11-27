@@ -3,8 +3,9 @@ import Header from "./components/Header";
 import HomePage from "./components/HomePage";
 import Footer from "./components/Footer";
 import Contact from "./components/contactUs";
-import { Route, BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Gallery from "./components/Gallery";
+import { NotFound } from "./components/NotFound";
 
 function App() {
   const bannerInfo = {
@@ -23,17 +24,22 @@ function App() {
     <div className="App">
       <Header />
       <Router>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/contact">
-          <Contact bannerInfo={bannerInfo["contact"]} classInfo={"contact"} />
-        </Route>
-        <Route exact path="/joinUs">
-          <Contact bannerInfo={bannerInfo["join"]} classInfo={"join"} />
-        </Route>
-        <Route exact path="/gallery">
-          <Gallery />
-        </Route>
-        <Route component={HomePage} />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/contact">
+            <Contact bannerInfo={bannerInfo["contact"]} classInfo={"contact"} />
+          </Route>
+          <Route exact path="/joinUs">
+            <Contact bannerInfo={bannerInfo["join"]} classInfo={"join"} />
+          </Route>
+          <Route exact path="/gallery">
+            <Gallery />
+          </Route>
+          <Route>
+            <NotFound />
+            <HomePage />
+          </Route>
+        </Switch>
       </Router>
       <Footer />
     </div>
