@@ -1,11 +1,20 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import img0 from "../styles/img/IMG_0331.JPG";
-import useWindowDimensions from "./helper/useWindowDimensions";
+import { NotFound } from "./NotFound";
 export default function Gallery() {
+  // State for s3 image data
   const [imgData, setImgData] = useState([]);
-  const [images, setImages] = useState([]);
-  const { height, width } = useWindowDimensions();
+  // Know how many photos to load and pull from s3
+  const [imageSliceCounter, setImageSliceCounter] = useState(1);
+  // error handling
+  const [error, setError] = useState();
+  // state for current scroll location and max window scroll available
+  const [windowScroll, setWindowScroll] = useState(window.scrollY);
+  const [maxWindowScroll, setMaxWindowScroll] = useState(
+    document.documentElement.scrollHeight - window.innerHeight
+  );
+
+  // gets all the image data from s3 and sets it to ImgData on gallery page load
   useEffect(() => {
     axios
       .get(`http://localhost:3030`)
@@ -13,7 +22,7 @@ export default function Gallery() {
         setImgData(response.data);
       })
       .catch((err) => {
-        console.log(err);
+        setError(err);
       });
   }, []);
 
