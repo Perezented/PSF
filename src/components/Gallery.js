@@ -40,9 +40,16 @@ export default function Gallery() {
     }
   };
 
+  // On scroll, checks windowScroll and maxWindowScroll
   useEffect(() => {
-    function fitImages() {
-      imgData.slice(i, i + 10).forEach((value) => {
+    window.addEventListener("scroll", handleWindowScroll);
+  }, []);
+  useEffect(() => {
+    // On scroll, checks if windowScroll > maxWindowScroll - number
+    // If true, add 10 to imageSliceCount
+    window.addEventListener("scroll", handleImageSliceCount);
+  }, [windowScroll]);
+
         const curr_img_link = process.env.REACT_APP_.S3_LINK + value.Key;
         const imgCopy = images;
         imgCopy.push(curr_img_link);
