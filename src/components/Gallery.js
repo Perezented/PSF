@@ -26,7 +26,19 @@ export default function Gallery() {
       });
   }, []);
 
-  let i = 1;
+  // Changes the window scroll and max window scroll
+  const handleWindowScroll = () => {
+    setWindowScroll(window.scrollY);
+    setMaxWindowScroll(
+      document.documentElement.scrollHeight - window.innerHeight
+    );
+  };
+
+  const handleImageSliceCount = () => {
+    if (maxWindowScroll - 50 <= windowScroll) {
+      setImageSliceCounter(imageSliceCounter + 10);
+    }
+  };
 
   useEffect(() => {
     function fitImages() {
