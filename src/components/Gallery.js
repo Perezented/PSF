@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { NotFound } from "./NotFound";
+import { useScrolling } from "./helper/useScrolling";
 export default function Gallery() {
+  let scrollData = useScrolling();
   // State for s3 image data
   const [imgData, setImgData] = useState([]);
   // Know how many photos to load and pull from s3
@@ -9,11 +10,6 @@ export default function Gallery() {
   // error handling
   const [error, setError] = useState();
   // state for current scroll location and max window scroll available
-
-  const [windowScroll, setWindowScroll] = useState(window.scrollY);
-  const [maxWindowScroll, setMaxWindowScroll] = useState(
-    document.documentElement.scrollHeight - window.innerHeight
-  );
 
   // gets all the image data from s3 and sets it to ImgData on gallery page load
   useEffect(() => {
@@ -27,27 +23,20 @@ export default function Gallery() {
       });
   }, []);
 
-  // Changes the window scroll and max window scroll
-  const handleWindowScroll = () => {
-    setWindowScroll(window.scrollY);
-    setMaxWindowScroll(
-      document.documentElement.scrollHeight - window.innerHeight
-    );
-  };
   const handleImageSliceCount = () => {
-    if (maxWindowScroll - maxWindowScroll / 15 <= windowScroll) {
+    if (
+      scrollData["max_scroll"] - scrollData["max_scroll"] / 15 <=
+      scrollData["curr_scroll"]
+    ) {
       setImageSliceCounter(imageSliceCounter + 10);
     }
   };
-  // On scroll, checks windowScroll and maxWindowScroll
+
   useEffect(() => {
-    window.addEventListener("scroll", handleWindowScroll);
-  }, []);
-  useEffect(() => {
-    // On scroll, checks if windowScroll > maxWindowScroll - number
+    // On scroll, checks if scrollData['curr_scroll'] > maxWindowScroll - number
     // If true, add 10 to imageSliceCount
     window.addEventListener("scroll", handleImageSliceCount);
-  }, [windowScroll]);
+  }, [scrollData["curr_scroll"]]);
 
   let imageLinks = {};
 
@@ -69,8 +58,11 @@ export default function Gallery() {
         }
       });
     }
+
     return Object.values(imageLinks);
   }
+  let images = fillImages();
+
   return (
     <section className="gallery">
       {error ? (
@@ -82,7 +74,7 @@ export default function Gallery() {
         <>
           <h1>Gallery section of Pro-Select work</h1>
           <div className="imgContainer">
-            {imgData ? fillImages() : <NotFound />}
+            {images.length > 0 ? fillImages() : "LOADING"}
           </div>
         </>
       )}
