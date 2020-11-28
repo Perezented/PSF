@@ -56,11 +56,15 @@ export default function Gallery() {
     let count = imageSliceCounter;
 
     if (imgData.length > 0) {
-      imgData.slice(1, count + 15).forEach((value) => {
-        const curr_img_link = process.env.REACT_APP_.S3_LINK + value.Key;
+      imgData.slice(1, count + 10).forEach((value) => {
         if (!(value.Key in imageLinks)) {
           imageLinks[value.Key] = (
-            <img src={curr_img_link} alt="" key={value.Key} className="img0" />
+            <img
+              src={process.env.REACT_APP_.S3_LINK + value.Key}
+              alt=""
+              key={value.Key}
+              className="imgs"
+            />
           );
         }
       });
@@ -76,8 +80,8 @@ export default function Gallery() {
         </>
       ) : (
         <>
-          <h1>This is going to to be the gallery section</h1>
-          <div className="cardContainer">
+          <h1>Gallery section of Pro-Select work</h1>
+          <div className="imgContainer">
             {imgData ? fillImages() : <NotFound />}
           </div>
         </>

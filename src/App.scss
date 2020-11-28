@@ -425,3 +425,12 @@ body {
   width: 100vw;
   text-shadow: black 0 0 2px, white 0 0 5px;
 }
+
+.imgContainer {
+  margin: 0 10%;
+  .imgs {
+    margin: auto;
+    height: 40vh;
+    padding: 1%;
+  }
+}
