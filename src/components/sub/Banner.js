@@ -11,6 +11,15 @@ export default function HomeBanner(props) {
       >
         <h1>{props.props[1]}</h1>
         <h3>{props.props[2]}</h3>
+        {props.props[0] === "img0" && (
+          <button
+            onClick={() => {
+              window.location = "/contact";
+            }}
+          >
+            Contact Us
+          </button>
+        )}
       </div>
     </section>
   );
