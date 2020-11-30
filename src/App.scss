@@ -475,15 +475,24 @@ body {
 .appearBottom {
   opacity: 1;
   transform: translateY(0);
-  transition: 1s all ease-out;
+  transition: 0.6s all linear;
 }
 
+.opacityRight {
+  opacity: 0;
+  transform: translateX(90%);
+  transition: 0.6s all linear;
+}
+.appearRight {
+  opacity: 1;
+  transform: translateX(0);
+}
 .opacityLeft {
   opacity: 0;
-  transform: translateX(40%);
+  transform: translateX(-90%);
+  transition: 0.6s all linear;
 }
 .appearLeft {
   opacity: 1;
   transform: translateX(0);
-  transition: 3s all ease-out;
 }
