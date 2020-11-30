@@ -22,26 +22,33 @@ function App() {
   };
   return (
     <div className="App">
-      <Header />
       <Router>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/contact">
-            <Contact bannerInfo={bannerInfo["contact"]} classInfo={"contact"} />
-          </Route>
-          <Route exact path="/joinUs">
-            <Contact bannerInfo={bannerInfo["join"]} classInfo={"join"} />
-          </Route>
-          <Route exact path="/gallery">
-            <Gallery />
-          </Route>
-          <Route>
-            <NotFound />
-            <HomePage />
-          </Route>
-        </Switch>
+        <Header />
+
+        <div className="fade">
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/contact">
+              <Contact
+                bannerInfo={bannerInfo["contact"]}
+                classInfo={"contact"}
+              />
+            </Route>
+            <Route exact path="/joinUs">
+              <Contact bannerInfo={bannerInfo["join"]} classInfo={"join"} />
+            </Route>
+            <Route exact path="/gallery">
+              <Gallery />
+            </Route>
+            <Route>
+              <NotFound />
+              <HomePage />
+            </Route>
+          </Switch>
+
+          <Footer />
+        </div>
       </Router>
-      <Footer />
     </div>
   );
 }
