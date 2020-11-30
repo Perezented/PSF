@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useScrolling } from "./helper/useScrolling";
+import ImgModal from "./imgModal";
 export default function Gallery() {
   let scrollData = useScrolling();
   // State for s3 image data
@@ -63,11 +64,9 @@ export default function Gallery() {
         }
       });
     }
-
     return Object.values(imageLinks);
   }
   let images = fillImages();
-
   return (
     <section className="gallery">
       {error ? (
@@ -78,6 +77,7 @@ export default function Gallery() {
       ) : (
         <>
           <h1>Gallery section of Pro-Select work</h1>
+          <ImgModal imgModal={currImg} setCurrImg={setCurrImg} />
           <div className="imgContainer">
             {images.length > 0 ? fillImages() : "LOADING"}
           </div>
