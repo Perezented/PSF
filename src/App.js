@@ -1,10 +1,10 @@
 import "./App.scss";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Header from "./components/Header";
 import HomePage from "./components/HomePage";
+import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
 import Contact from "./components/contactUs";
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
-import Gallery from "./components/Gallery";
 import { NotFound } from "./components/NotFound";
 
 function App() {
