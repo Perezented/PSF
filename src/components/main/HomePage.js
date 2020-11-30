@@ -5,6 +5,40 @@ import WeDoMore from "../subhome/WeDoMore";
 import Spacer from "../sub/Spacer";
 import { useScrolling } from "../helper/useScrolling";
 export default function HomePage() {
+  useEffect(() => {
+    window.addEventListener("load", () => {
+      document.querySelectorAll("p").forEach((value, i, array) => {
+        console.log("ps", value, array);
+        value.classList.add("opacityBottom");
+        array[0].classList.remove("opacityBottom");
+      });
+      document.querySelectorAll("section div").forEach((value, i, array) => {
+        console.log("sections", value, array);
+        value.classList.add("opacityBottom");
+        array[0].classList.remove("opacityBottom");
+        // array[1].classList.remove("opacityBottom");
+        array[array.length - 1].classList.remove("opacityBottom");
+        // array[array.length - 2].classList.remove("opacityBottom");
+      });
+    });
+  });
+  let sections = document.querySelectorAll("section div");
+  let ps = document.querySelectorAll("p");
+  let twothirds = Math.floor((window.innerHeight / 10) * 9);
+  // console.log(scrollData);
+  function addingAppear(array) {
+    array.forEach((value, index) => {
+      let currSectionTop = value.getBoundingClientRect().top;
+      if (index !== array.length - 1) {
+        if (currSectionTop <= twothirds) {
+          value.classList.add("appearBottom");
+        }
+      }
+    });
+  }
+  addingAppear(sections);
+  addingAppear(ps);
+
   let bannerInfo = [
     "img0",
     "Pro-Select Flooring LLC.",
