@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import BusinessHours from "./BusinessHours";
-import Form from "./Form";
-import Banner from "./Banner";
-import ThankYouMessage from "./ThankYouMessage";
+import BusinessHours from "../sub/BusinessHours";
+import Form from "../sub/Form";
+import Banner from "../sub/Banner";
+import ThankYouMessage from "../sub/ThankYouMessage";
 
 export default function Contact(props) {
   const [thankYouMessage, setThankYouMessage] = useState(false);

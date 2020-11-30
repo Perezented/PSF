@@ -1,11 +1,11 @@
 import "./App.scss";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
-import Header from "./components/Header";
-import HomePage from "./components/HomePage";
-import Gallery from "./components/Gallery";
-import Footer from "./components/Footer";
-import Contact from "./components/contactUs";
-import { NotFound } from "./components/NotFound";
+import Header from "./components/main/Header";
+import HomePage from "./components/main/HomePage";
+import Gallery from "./components/main/Gallery";
+import Footer from "./components/main/Footer";
+import Contact from "./components/main/contactUs";
+import { NotFound } from "./components/sub/NotFound";
 
 function App() {
   const bannerInfo = {

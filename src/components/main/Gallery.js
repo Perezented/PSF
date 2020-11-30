@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useScrolling } from "./helper/useScrolling";
-import ImgModal from "./imgModal";
+import { useScrolling } from "../helper/useScrolling";
+import ImgModal from "../sub/imgModal";
 export default function Gallery() {
   let scrollData = useScrolling();
   // State for s3 image data
