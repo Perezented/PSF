@@ -1,5 +1,4 @@
 export default function ImgModal(props) {
-  console.log("props", props, props.imgModal);
   return (
     <section
       className={props.imgModal ? "visible" : "invisible"}

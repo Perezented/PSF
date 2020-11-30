@@ -41,7 +41,6 @@ export default function HomePage() {
       right.forEach((value) => {
         value.classList.remove("opacityBottom");
         value.classList.add("opacityRight");
-        console.log(value, "right");
       });
     });
   }, []);
