@@ -8,12 +8,10 @@ export default function HomePage() {
   useEffect(() => {
     window.addEventListener("load", () => {
       document.querySelectorAll("p").forEach((value, i, array) => {
-        console.log("ps", value, array);
         value.classList.add("opacityBottom");
         array[0].classList.remove("opacityBottom");
       });
       document.querySelectorAll("section div").forEach((value, i, array) => {
-        console.log("sections", value, array);
         value.classList.add("opacityBottom");
         array[0].classList.remove("opacityBottom");
         // array[1].classList.remove("opacityBottom");
@@ -25,7 +23,6 @@ export default function HomePage() {
   let sections = document.querySelectorAll("section div");
   let ps = document.querySelectorAll("p");
   let twothirds = Math.floor((window.innerHeight / 10) * 9);
-  // console.log(scrollData);
   function addingAppear(array) {
     array.forEach((value, index) => {
       let currSectionTop = value.getBoundingClientRect().top;
