@@ -434,3 +434,25 @@ body {
     padding: 1%;
   }
 }
+
+.invisible {
+  display: none;
+}
+.visible {
+  z-index: 5;
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.404);
+  div {
+    background-color: white;
+    width: min-content;
+    height: 90%;
+    padding: 2%;
+    margin: 5px auto;
+    img {
+      height: 99%;
+    }
+  }
+}
