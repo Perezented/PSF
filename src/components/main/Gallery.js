@@ -26,16 +26,16 @@ export default function Gallery() {
 
   const handleImageSliceCount = () => {
     if (
-      scrollData["max_scroll"] - scrollData["max_scroll"] / 15 <=
+      scrollData["max_scroll"] - scrollData["max_scroll"] / 17 <=
       scrollData["curr_scroll"]
     ) {
-      setImageSliceCounter(imageSliceCounter + 10);
+      setImageSliceCounter(imageSliceCounter + 7);
     }
   };
 
   useEffect(() => {
     // On scroll, checks if scrollData['curr_scroll'] > maxWindowScroll - number
-    // If true, add 10 to imageSliceCount
+    // If true, add 7 to imageSliceCount
     window.addEventListener("scroll", handleImageSliceCount);
   }, [scrollData["curr_scroll"]]);
 
@@ -46,7 +46,7 @@ export default function Gallery() {
     let count = imageSliceCounter;
 
     if (imgData.length > 0) {
-      imgData.slice(1, count + 10).forEach((value) => {
+      imgData.slice(1, count + 7).forEach((value) => {
         if (!(value.Key in imageLinks)) {
           imageLinks[value.Key] = (
             <img
