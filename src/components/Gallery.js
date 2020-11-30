@@ -10,7 +10,7 @@ export default function Gallery() {
   // error handling
   const [error, setError] = useState();
   // state for current scroll location and max window scroll available
-
+  const [currImg, setCurrImg] = useState();
   // gets all the image data from s3 and sets it to ImgData on gallery page load
   useEffect(() => {
     axios
@@ -53,6 +53,11 @@ export default function Gallery() {
               alt=""
               key={value.Key}
               className="imgs"
+              onClick={(e) => {
+                let curr =
+                  e.target.src.split("/")[3] + "/" + e.target.src.split("/")[4];
+                setCurrImg(curr);
+              }}
             />
           );
         }
