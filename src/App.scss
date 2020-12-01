@@ -122,8 +122,8 @@ body {
 }
 .img0 {
   background: url("./styles/img/IMG_1778.jpg");
-  height: 45vh;
-  background-position-y: bottom;
+  height: 60vh;
+  background-position-y: 70%;
   filter: contrast(150%) drop-shadow(0px 8px 15px black);
 }
 .img1 {
@@ -152,23 +152,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  button {
-    transition: all 0.3s ease-in;
-    width: 25%;
-    background-color: rgba(173, 3, 3, 0.4);
-    color: rgba(255, 255, 255, 0.7);
-    border: 3px solid white;
-    font-weight: 700;
-    font-size: 2rem;
-    padding: 0.5% 1%;
-    margin: 0 auto;
-    &:hover {
-      color: white;
-      background-color: rgba(173, 3, 3, 0.7);
-      cursor: pointer;
-    }
-  }
-
   h1,
   h3 {
     margin: 1% auto;
@@ -176,12 +159,38 @@ body {
     text-shadow: 0 0 9px black;
   }
 }
+.buttonHolder {
+  position: absolute;
+  top: 50%;
+  z-index: 6;
+  width: 100vw;
+
+  button {
+    transition-duration: 250ms;
+    background-color: rgba(173, 3, 3, 0.8);
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0 auto;
+    border: 3px solid white;
+    padding: 0.5% 1%;
+  }
+  .button {
+    &:hover {
+      transition-duration: 500ms;
+      color: white;
+      background-color: rgba(173, 3, 3, 0.9);
+      text-shadow: 0 0 1px black, 0 0 5px white;
+      cursor: pointer;
+    }
+  }
+}
 .contactBannerSize {
   @include contactsBannerHeight;
   justify-content: space-around;
 }
 .homepageBannerSize {
-  height: 45vh;
+  height: 60vh;
 }
 @mixin background($url) {
   background: linear-gradient(
