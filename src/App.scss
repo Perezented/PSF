@@ -498,13 +498,13 @@ body {
 .appearBottom {
   opacity: 1;
   transform: translateY(0);
-  transition: 1s all linear;
+  transition: 750ms all ease-in;
 }
 
 .opacityRight {
   opacity: 0;
   transform: translateX(90%);
-  transition: 1s all linear;
+  transition: 750ms all ease-in;
 }
 .appearRight {
   opacity: 1;
@@ -513,9 +513,21 @@ body {
 .opacityLeft {
   opacity: 0;
   transform: translateX(-90%);
-  transition: 1s all linear;
+  transition: 750ms all ease-in;
 }
 .appearLeft {
   opacity: 1;
   transform: translateX(0);
+}
+
+.circleButton {
+  transition-duration: 250ms;
+  z-index: 6;
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  border-radius: 50%;
+  width: min-content;
+  height: min-content;
+  top: auto;
 }
