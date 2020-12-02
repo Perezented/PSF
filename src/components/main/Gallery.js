@@ -14,6 +14,17 @@ export default function Gallery() {
   // state for current scroll location and max window scroll available
   const [currImg, setCurrImg] = useState();
   // gets all the image data from s3 and sets it to ImgData on gallery page load
+  // On scroll, checks the footer rectangle top minus 2/3 of window height
+  // If true, add 4 to imageSliceCount
+  const handleImageSliceCount = () => {
+    let rightAboveFooter = document.getElementById("footer").getClientRects()[0]
+      .y;
+
+    if (rightAboveFooter - (window.outerHeight / 3) * 2 <= 0) {
+      setImageSliceCounter(imageSliceCounter + 4);
+    }
+  };
+
   useEffect(() => {
     axios
       .get(`http://localhost:3030`)
@@ -23,22 +34,17 @@ export default function Gallery() {
       .catch((err) => {
         setError(err);
       });
+    document.querySelectorAll("section div").forEach((value) => {
+      value.classList.remove("opacityBottom");
+    });
   }, []);
-
-  const handleImageSliceCount = () => {
-    if (
-      scrollData["max_scroll"] - scrollData["max_scroll"] / 17 <=
-      scrollData["curr_scroll"]
-    ) {
-      setImageSliceCounter(imageSliceCounter + 7);
-    }
-  };
-
   useEffect(() => {
-    // On scroll, checks if scrollData['curr_scroll'] > maxWindowScroll - number
-    // If true, add 7 to imageSliceCount
     window.addEventListener("scroll", handleImageSliceCount);
-  }, [scrollData["curr_scroll"]]);
+
+    return () => {
+      window.removeEventListener("scroll", handleImageSliceCount);
+    };
+  }, [imageSliceCounter]);
 
   let imageLinks = {};
 
@@ -47,7 +53,7 @@ export default function Gallery() {
     let count = imageSliceCounter;
 
     if (imgData.length > 0) {
-      imgData.slice(1, count + 7).forEach((value) => {
+      imgData.slice(1, count + 4).forEach((value) => {
         if (!(value.Key in imageLinks)) {
           imageLinks[value.Key] = (
             <img
