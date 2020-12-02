@@ -9,6 +9,9 @@ export function useScrolling() {
   );
   useEffect(() => {
     window.addEventListener("scroll", handleWindowScroll);
+    return () => {
+      window.removeEventListener("scroll", handleWindowScroll);
+    };
   }, []);
 
   // Changes the window scroll and max window scroll
