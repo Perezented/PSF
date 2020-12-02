@@ -1,7 +1,7 @@
 import React from "react";
 export default function Footer() {
   return (
-    <section className="footer">
+    <section id="footer" className="footer">
       <div>
         <a href="/">Home</a>
         <a href="/gallery">Gallery</a>

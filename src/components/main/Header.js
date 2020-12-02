@@ -6,7 +6,6 @@ export default function Header() {
     <section className="nav">
       <nav>
         <li>
-          {/* <a href="/">Home</a> */}
           <Link to="/">Home</Link>
         </li>
         <li>
