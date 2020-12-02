@@ -83,11 +83,11 @@ export default function HomePage() {
   let scrollData = useScrolling();
 
   return (
-    <>
+    <section className="fade">
       <Banner props={bannerInfo} />
       <TriSection />
       <Spacer />
       <WeDoMore />
-    </>
+    </section>
   );
 }

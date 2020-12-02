@@ -68,8 +68,9 @@ export default function Gallery() {
     return Object.values(imageLinks);
   }
   let images = fillImages();
+
   return (
-    <section className="gallery">
+    <section className="gallery fade">
       {error ? (
         <>
           <h4>ERROR</h4>
@@ -79,7 +80,7 @@ export default function Gallery() {
         <>
           <h1>Gallery section of Pro-Select work</h1>
           <ImgModal imgModal={currImg} setCurrImg={setCurrImg} />
-          <div className="imgContainer">
+          <div className="imgContainer" id='"imgContainer"'>
             {images.length > 0 ? fillImages() : <Loader />}
           </div>
         </>

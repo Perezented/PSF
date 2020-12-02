@@ -8,7 +8,7 @@ export default function Contact(props) {
   const [thankYouMessage, setThankYouMessage] = useState(false);
 
   return (
-    <section className={props.classInfo} id={props.classInfo}>
+    <section className={props.classInfo + " fade"} id={props.classInfo}>
       <Banner props={props.bannerInfo} />
       <ThankYouMessage props={thankYouMessage} />
       <div className="flex">

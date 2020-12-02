@@ -74,7 +74,7 @@ body {
   }
 }
 @mixin headerfootercolor {
-  background-color: rgba(173, 3, 3, 0.87);
+  background-color: rgba(173, 3, 3, 1);
 }
 @mixin contactsBannerHeight {
   height: 60vh;
@@ -539,4 +539,7 @@ body {
   width: min-content;
   height: min-content;
   top: auto;
+}
+.logo {
+  height: 50%;
 }
