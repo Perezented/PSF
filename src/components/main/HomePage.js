@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import TriSection from "../subhome/TriSection";
 import Banner from "../sub/Banner";
 import WeDoMore from "../subhome/WeDoMore";
+import Button from "../sub/Button";
 import Spacer from "../sub/Spacer";
 import { useScrolling } from "../helper/useScrolling";
 export default function HomePage() {
@@ -21,7 +22,7 @@ export default function HomePage() {
       multiDivFromSection[15],
       multiDivFromSection[15]
     ];
-    window.addEventListener("load", () => {
+    const addingNremovingClasses = () => {
       document.querySelectorAll("p").forEach((value, i, array) => {
         value.classList.add("opacityBottom");
         array[0].classList.remove("opacityBottom");
@@ -42,16 +43,24 @@ export default function HomePage() {
         value.classList.remove("opacityBottom");
         value.classList.add("opacityRight");
       });
-    });
+    };
+    window.addEventListener("animationstart", addingNremovingClasses());
+    return () => {
+      window.removeEventListener("animationstart", addingNremovingClasses());
+    };
   }, []);
 
   // adds 'appear' class to elements once 9/10 of the screen has passed by
   function addingAppear(array, direction) {
     array.forEach((value, index) => {
-      let currSectionTop = value.getBoundingClientRect().top;
-      if (index !== array.length) {
-        if (currSectionTop <= ninetenths) {
-          value.classList.add(direction);
+      if (value !== undefined) {
+        let currSectionTop = value.getBoundingClientRect().top;
+        if (index !== array.length) {
+          if (currSectionTop <= theFractionIrandomlyDecideOn) {
+            value.classList.add(direction);
+          } else {
+            value.classList.remove(direction);
+          }
         }
       }
     });
@@ -59,7 +68,7 @@ export default function HomePage() {
   // Setup of specific items to have them appear once 9/10 of the screen has scrolled through
   let sections = document.querySelectorAll("section div");
   let ps = document.querySelectorAll("p");
-  let ninetenths = Math.floor((window.innerHeight / 10) * 9);
+  let theFractionIrandomlyDecideOn = Math.floor((window.innerHeight / 12) * 10);
   let multiDivFromSection = document.querySelectorAll("section div div");
   let left = [
     multiDivFromSection[3],
@@ -88,6 +97,7 @@ export default function HomePage() {
       <TriSection />
       <Spacer />
       <WeDoMore />
+      <Button />
     </section>
   );
 }
