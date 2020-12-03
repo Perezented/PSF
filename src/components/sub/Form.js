@@ -2,13 +2,17 @@ import React from "react";
 import emailjs from "emailjs-com";
 
 export default function Form(props) {
-  console.log("form props: ", props);
   function sendEmail(e) {
     e.preventDefault();
+
+    // Only in join page will it add a job alert tag to subject line of form
+    if (props.classInfo === "join") {
+      e.target.subject.value = "JOB ALERT: " + e.target.subject.value;
+    }
+    props.setTYMessage(true);
     setTimeout(() => {
-      // setThankYouMessage(false);
-    }, 6000);
-    // setThankYouMessage(true);
+      props.setTYMessage(false);
+    }, 7000);
     emailjs
       .sendForm(
         "service_xdxjlgs",

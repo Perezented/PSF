@@ -17,10 +17,13 @@ export default function Contact(props) {
   return (
     <section className={props.classInfo + " fade"} id={props.classInfo}>
       <Banner props={props.bannerInfo} />
-      <ThankYouMessage props={thankYouMessage} />
       <div className="flex">
         <BusinessHours />
-        <Form props={setThankYouMessage} classInfo={props.classInfo} />
+        {thankYouMessage ? (
+          <ThankYouMessage />
+        ) : (
+          <Form setTYMessage={setThankYouMessage} classInfo={props.classInfo} />
+        )}
       </div>
     </section>
   );
