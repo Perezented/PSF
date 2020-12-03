@@ -20,7 +20,7 @@ export default function Gallery() {
     let rightAboveFooter = document.getElementById("footer").getClientRects()[0]
       .y;
 
-    if (rightAboveFooter - (window.outerHeight / 3) * 2 <= 0) {
+    if (rightAboveFooter - window.outerHeight <= 0) {
       setImageSliceCounter(imageSliceCounter + 4);
     }
   };
