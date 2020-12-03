@@ -1,7 +1,7 @@
 import { useScrolling } from "../helper/useScrolling";
 
 export default function HomeBanner(props) {
-  let scrollData = useScrolling();
+  // let scrollData = useScrolling();
   return (
     <section className={"homeImg " + props.props[0]}>
       <div
@@ -12,7 +12,7 @@ export default function HomeBanner(props) {
         }
       >
         <h1>{props.props[1]}</h1>
-        <h3>{props.props[2]}</h3>
+        <h2>{props.props[2]}</h2>
       </div>
     </section>
   );
