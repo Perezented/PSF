@@ -135,7 +135,7 @@ nav {
   @include contactsBannerHeight;
   background-position-y: 35%;
   width: 100%;
-  filter: brightness(80%) drop-shadow(0px 8px 15px black);
+  filter: drop-shadow(0px 8px 15px black);
 }
 .img2 {
   background: url("./styles/img/IMG_0331.jpg");
