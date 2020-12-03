@@ -97,7 +97,7 @@ nav {
   z-index: 1;
   @include headerfootercolor;
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: 6fr 5fr;
   padding: 0.2% 10%;
   nav {
     display: flex;
@@ -176,7 +176,7 @@ nav {
     font-weight: 700;
     font-size: 2rem;
     margin: 0 auto;
-    border: 3px solid white;
+    border: 3px ridge white;
     padding: 0.5% 1%;
   }
   .button {
@@ -375,6 +375,9 @@ nav {
   color: white;
   padding: 4% 0 2%;
   bottom: 0;
+  p {
+    opacity: 1;
+  }
   a {
     color: white;
     font-size: 1.8rem;
@@ -433,8 +436,10 @@ nav {
     }
   }
   h3,
-  h4 {
+  h4,
+  form {
     margin: 0;
+    animation: aniin ease-in 1s;
   }
   .pageBanner {
     h1,
@@ -442,6 +447,10 @@ nav {
       margin: 0 auto;
       width: 80%;
     }
+  }
+  .tymessage {
+    opacity: 1;
+    margin: auto 0;
   }
 }
 @keyframes aniout {
