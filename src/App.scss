@@ -125,20 +125,20 @@ nav {
   }
 }
 .img0 {
-  background: url("./styles/img/IMG_1778.jpg");
+  background: url("styles/img/IMG_1778.jpg");
   height: 60vh;
   background-position-y: 70%;
   filter: contrast(150%) drop-shadow(0px 8px 15px black);
 }
 .img1 {
-  background: url("./styles/img/IMG_0380.jpg");
+  background: url("styles/img/IMG_0380.jpg");
   @include contactsBannerHeight;
   background-position-y: 35%;
   width: 100%;
   filter: drop-shadow(0px 8px 15px black);
 }
 .img2 {
-  background: url("./styles/img/IMG_0331.jpg");
+  background: url("styles/img/IMG_0331.jpg");
   @include contactsBannerHeight;
   background-position-y: 25%;
   width: 100%;
@@ -233,13 +233,13 @@ nav {
     gap: 2%;
     color: white;
     .hospitals {
-      @include background("./styles/img/IMG_0335.jpg");
+      @include background("styles/img/IMG_0335.jpg");
     }
     .school {
-      @include background("./styles/img/IMG_4081.jpg");
+      @include background("styles/img/IMG_4081.jpg");
     }
     .floortypes {
-      @include background("./styles/img/IMG_3349.jpg");
+      @include background("styles/img/IMG_3349.jpg");
     }
     div {
       padding: 2%;
@@ -255,7 +255,7 @@ nav {
   }
 }
 .spacer {
-  @include lighterBackground("./styles/img/IMG_1842.jpg");
+  @include lighterBackground("styles/img/IMG_1842.jpg");
   height: 20vh;
   background-position-y: 50%;
   z-index: -1;
@@ -287,7 +287,7 @@ nav {
   .gridHolder .ceramic {
     grid-area: 3/3/5/5;
     background-position-y: 90%;
-    // @include lighterBackground("./styles/img/IMG_1800.jpg");
+    // @include lighterBackground("styles/img/IMG_1800.jpg");
     display: grid;
 
     grid-template-columns: repeat(2, 1fr);
@@ -302,24 +302,24 @@ nav {
       border: 1px solid white;
     }
     .subCeramic0 {
-      @include lighterBackground("./styles/img/IMG_2378.jpg");
+      @include lighterBackground("styles/img/IMG_2378.jpg");
       grid-area: 1/1/3/3;
       background-position-y: 60%;
     }
     .subCeramic1 {
-      @include lighterBackground("./styles/img/IMG_1800.jpg");
+      @include lighterBackground("styles/img/IMG_1800.jpg");
       grid-area: 3/1/5/3;
       background-position-y: 50%;
     }
   }
   .vct {
     grid-area: 5/1/6/2;
-    @include lighterBackground("./styles/img/IMG_4597.jpg");
+    @include lighterBackground("styles/img/IMG_4597.jpg");
     background-position-y: 90%;
   }
   .flashcove {
     grid-area: 1/2/2/3;
-    @include lighterBackground("./styles/img/IMG_4417.jpg");
+    @include lighterBackground("styles/img/IMG_4417.jpg");
     background-position-y: 75%;
     background-position-x: 50%;
     background-size: 200%;
@@ -327,44 +327,44 @@ nav {
   .leveling {
     grid-area: 4/1/5/2;
     background-position-y: 90%;
-    @include lighterBackground("./styles/img/IMG_4616.jpg");
+    @include lighterBackground("styles/img/IMG_4616.jpg");
   }
   .mrs {
     grid-area: 1/1/2/2;
     background-position-y: 90%;
-    @include lighterBackground("./styles/img/IMG_0376.jpg");
+    @include lighterBackground("styles/img/IMG_0376.jpg");
   }
   .shotblast {
     grid-area: 2/1/4/3;
     flex-direction: column;
-    @include lighterBackground("./styles/img/IMG_3439.jpg");
+    @include lighterBackground("styles/img/IMG_3439.jpg");
   }
   .carpet {
     grid-area: 4/2/5/3;
-    @include lighterBackground("./styles/img/IMG_3328.jpg");
+    @include lighterBackground("styles/img/IMG_3328.jpg");
     background-position-y: bottom;
     background-position-x: right;
     background-size: 150%;
   }
   .bronco {
     grid-area: 1/3/3/4;
-    @include lighterBackground("./styles/img/IMG_3439.jpg");
+    @include lighterBackground("styles/img/IMG_3439.jpg");
     background-position-x: 60%;
     display: flex;
     flex-direction: column;
   }
   .vynal {
-    @include lighterBackground("./styles/img/IMG_0481.jpg");
+    @include lighterBackground("styles/img/IMG_0481.jpg");
     grid-area: 1/4/3/5;
     background-position-x: center;
   }
   .nora {
-    @include lighterBackground("./styles/img/IMG_4186.jpg");
+    @include lighterBackground("styles/img/IMG_4186.jpg");
     grid-area: 5/2/6/4;
     background-position-y: 50%;
   }
   .more {
-    @include lighterBackground("./styles/img/IMG_4012.jpg");
+    @include lighterBackground("styles/img/IMG_4012.jpg");
     grid-area: 5/4/6/5;
     display: flex;
     flex-direction: column;
