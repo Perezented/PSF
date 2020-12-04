@@ -45,7 +45,23 @@
   overflow: hidden;
   width: 80%;
   margin: 3% auto;
+  @media (max-width: $breakpoint-phone) {
+    width: 100%;
+  }
   .gridHolder {
+    @media (max-width: $breakpoint-underhd) {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      gap: 10px;
+      div {
+        background-position-y: center;
+        padding-bottom: 15%;
+        background-repeat: no-repeat;
+        width: 100%;
+        margin: 0;
+      }
+    }
     color: rgb(255, 255, 255);
     display: grid;
     height: 150vh;
