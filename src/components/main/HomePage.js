@@ -69,9 +69,9 @@ export default function HomePage() {
     array.forEach((value, index) => {
       if (value !== undefined) {
         let currSectionTop =
-          windowWidth > 800
+          windowWidth > 1200
             ? value.getBoundingClientRect().top
-            : value.getBoundingClientRect().top - 135;
+            : value.getBoundingClientRect().top - 250;
         if (index !== array.length) {
           if (currSectionTop <= theFractionIrandomlyDecideOn) {
             value.classList.add(direction);
