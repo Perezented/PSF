@@ -8,6 +8,7 @@ import Contact from "./components/main/contactUs";
 import { NotFound } from "./components/sub/NotFound";
 import ScrollToTop from "./components/helper/scrollToTop";
 function App() {
+  // banner information for contact and join pages.
   const bannerInfo = {
     contact: [
       "img2",

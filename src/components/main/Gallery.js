@@ -23,6 +23,7 @@ export default function Gallery() {
       setImageSliceCounter(imageSliceCounter + 4);
     }
   };
+  // Pulls the image data from the node server
   useEffect(() => {
     axios
       .get(process.env.REACT_APP_.REACHING_LINK)
@@ -32,18 +33,21 @@ export default function Gallery() {
       .catch((err) => {
         setError(err);
       });
+    // removes the no opacity for the divs in section
     document.querySelectorAll("section div").forEach((value) => {
       value.classList.remove("opacityBottom");
     });
   }, []);
+
+  // adds a scroll event listener to know when to load in more images
   useEffect(() => {
     window.addEventListener("scroll", handleImageSliceCount);
-
     return () => {
       window.removeEventListener("scroll", handleImageSliceCount);
     };
   }, [imageSliceCounter]);
 
+  // object to hold the links of images as keys and img tags as values
   let imageLinks = {};
 
   // pushes links to image tags from s3, returns an object's values of html image elements
@@ -69,6 +73,7 @@ export default function Gallery() {
         }
       });
     }
+
     return Object.values(imageLinks);
   }
   let images = fillImages();

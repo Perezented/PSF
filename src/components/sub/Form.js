@@ -9,10 +9,12 @@ export default function Form(props) {
     if (props.classInfo === "join") {
       e.target.subject.value = "JOB ALERT: " + e.target.subject.value;
     }
+    // thank you message for when a message gets sent on the site
     props.setTYMessage(true);
     setTimeout(() => {
       props.setTYMessage(false);
     }, 7000);
+    // sends email to website business owner's email
     emailjs
       .sendForm(
         "service_xdxjlgs",

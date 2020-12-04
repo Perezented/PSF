@@ -9,6 +9,7 @@ export default function HomePage() {
   // upon load up, classes are added using js to hide selected elements
   useEffect(() => {
     let multiDivFromSection = document.querySelectorAll("section div div");
+    // all items on the left side of we do more section
     let left = [
       multiDivFromSection[3],
       multiDivFromSection[4],
@@ -17,11 +18,13 @@ export default function HomePage() {
       multiDivFromSection[13],
       multiDivFromSection[13]
     ];
+    // all items on the left side of we do more section
     let right = [
       multiDivFromSection[6],
       multiDivFromSection[15],
       multiDivFromSection[15]
     ];
+    // Add opacity to specified group of tags and removing the first item to keep in view for the user
     const addingNremovingClasses = () => {
       document.querySelectorAll("p").forEach((value, i, array) => {
         value.classList.add("opacityBottom");
@@ -44,13 +47,15 @@ export default function HomePage() {
         value.classList.add("opacityRight");
       });
     };
+    // on animationstart, starts adding and removing opacity classes
     window.addEventListener("animationstart", addingNremovingClasses());
+    // cleanup for event listener
     return () => {
       window.removeEventListener("animationstart", addingNremovingClasses());
     };
   }, []);
 
-  // adds 'appear' class to elements once 9/10 of the screen has passed by
+  // adds 'appear' class to elements once theFractionIrandomlyDecideOn of the screen has passed by
   function addingAppear(array, direction) {
     array.forEach((value, index) => {
       if (value !== undefined) {
@@ -70,6 +75,7 @@ export default function HomePage() {
   let ps = document.querySelectorAll("p");
   let theFractionIrandomlyDecideOn = Math.floor((window.innerHeight / 12) * 10);
   let multiDivFromSection = document.querySelectorAll("section div div");
+  // all items on the left side of we do more section
   let left = [
     multiDivFromSection[3],
     multiDivFromSection[4],
@@ -77,9 +83,11 @@ export default function HomePage() {
     multiDivFromSection[9],
     multiDivFromSection[13]
   ];
+  // all items on the left side of we do more section
   let right = [multiDivFromSection[6], multiDivFromSection[15]];
   addingAppear(sections, "appearBottom");
   addingAppear(ps, "appearBottom");
+  // once left appears, start running appearLeft and appearRight
   left[0] && addingAppear(left, "appearLeft");
   left[0] && addingAppear(right, "appearRight");
   // props for Banner component out of homepage
