@@ -26,7 +26,7 @@ export default function Gallery() {
   // Pulls the image data from the node server
   useEffect(() => {
     axios
-      .get(process.env.REACT_APP_.REACHING_LINK)
+      .get(process.env.REACT_APP_.REACHING_LINK + "images")
       .then((response) => {
         setImgData(response.data);
       })
