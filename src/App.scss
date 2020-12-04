@@ -90,6 +90,16 @@ nav {
     width: 100%;
   }
 }
+a {
+  font-size: 2rem;
+  font-weight: 600;
+  &:hover {
+    transition-duration: 500ms;
+    color: rgb(0, 102, 255);
+    text-shadow: 0 0 1px black, 0 0 2px white;
+    cursor: pointer;
+  }
+}
 .nav {
   position: sticky;
   top: 0;
@@ -107,10 +117,6 @@ nav {
   color: white;
   align-items: center;
   p {
-    a {
-      font-size: 2rem;
-      font-weight: 600;
-    }
     font-size: 1.9rem;
     font-weight: 600;
     text-align: right;
@@ -163,35 +169,28 @@ nav {
     text-shadow: 0 0 9px black;
   }
 }
-.buttonHolder {
-  position: absolute;
-  top: 50%;
-  z-index: 6;
-  width: 100vw;
 
-  button {
-    transition-duration: 250ms;
-    background-color: rgba(173, 3, 3, 0.8);
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 700;
-    font-size: 2rem;
-    margin: 0 auto;
-    border: 3px ridge white;
-    padding: 0.5% 1%;
-  }
-  .button {
-    &:hover {
-      transition-duration: 500ms;
-      color: white;
-      background-color: rgba(173, 3, 3, 0.9);
-      text-shadow: 0 0 1px black, 0 0 5px white;
-      cursor: pointer;
-    }
+button {
+  transition-duration: 250ms;
+  background-color: rgba(173, 3, 3, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0 auto;
+  border: 3px ridge white;
+  padding: 0.5% 1%;
+  &:hover {
+    transition-duration: 500ms;
+    color: white;
+    background-color: rgba(173, 3, 3, 0.9);
+    text-shadow: 0 0 1px black, 0 0 5px white;
+    cursor: pointer;
   }
 }
+
 .contactBannerSize {
   @include contactsBannerHeight;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .homepageBannerSize {
   height: 60vh;

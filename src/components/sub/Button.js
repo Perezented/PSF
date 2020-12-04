@@ -1,14 +1,11 @@
-export default function Button(props) {
+import { Link } from "react-router-dom";
+
+export default function Button() {
   return (
-    <div className="buttonHolder">
-      <button
-        className="button"
-        onClick={() => {
-          window.location = "/contact";
-        }}
-      >
-        {props.text}
+    <Link to="/contact">
+      <button id="button" className="button">
+        Contact Us
       </button>
-    </div>
+    </Link>
   );
 }

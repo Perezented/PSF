@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import TriSection from "../subhome/TriSection";
 import Banner from "../sub/Banner";
 import WeDoMore from "../subhome/WeDoMore";
-import Button from "../sub/Button";
 import Spacer from "../sub/Spacer";
 import { useScrolling } from "../helper/useScrolling";
 export default function HomePage() {
@@ -105,7 +104,6 @@ export default function HomePage() {
       <TriSection />
       <Spacer />
       <WeDoMore />
-      <Button />
     </section>
   );
 }
