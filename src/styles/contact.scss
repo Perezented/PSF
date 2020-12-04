@@ -9,6 +9,7 @@
     padding: 1%;
   }
   .businessHours {
+    width: 40%;
     address {
       display: flex;
       flex-direction: column;
@@ -26,7 +27,7 @@
     display: flex;
     justify-content: center;
     .form {
-      width: 30%;
+      width: 40%;
       display: grid;
     }
     .field {
@@ -35,11 +36,20 @@
     }
     input,
     textarea {
-      width: 23vw;
+      width: auto;
     }
     label {
       font-weight: 600;
       font-size: 1.6rem;
+    }
+    @media (max-width: $breakpoint-phone) {
+      display: flex;
+      flex-direction: column;
+      .businessHours,
+      .form {
+        width: 90%;
+        margin: 0 auto;
+      }
     }
   }
   h3,
