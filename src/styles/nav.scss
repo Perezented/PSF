@@ -36,6 +36,19 @@ nav {
     margin: 0 1%;
     padding: 0.5% 0;
   }
+  @media (max-width: $breakpoint-underhd) {
+    nav {
+      ul {
+        li {
+          a {
+            padding: 12% 3%;
+            width: 100%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+          }
+        }
+      }
+    }
+  }
   @media (max-width: $breakpoint-phone) {
     width: 100%;
     padding: 0.2% 0;
