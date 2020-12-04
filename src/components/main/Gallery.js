@@ -4,6 +4,7 @@ import { useScrolling } from "../helper/useScrolling";
 import ImgModal from "../sub/imgModal";
 import Loader from "../sub/Loader";
 export default function Gallery() {
+  let drawThisManyPhotos = 7;
   let scrollData = useScrolling();
   // State for s3 image data
   const [imgData, setImgData] = useState([]);
@@ -20,7 +21,7 @@ export default function Gallery() {
     let rightAboveFooter = document.getElementById("footer").getClientRects()[0]
       .y;
     if (rightAboveFooter - window.outerHeight <= 0) {
-      setImageSliceCounter(imageSliceCounter + 4);
+      setImageSliceCounter(imageSliceCounter + drawThisManyPhotos);
     }
   };
   // Pulls the image data from the node server
@@ -55,7 +56,7 @@ export default function Gallery() {
     let count = imageSliceCounter;
 
     if (imgData.length > 0) {
-      imgData.slice(1, count + 4).forEach((value) => {
+      imgData.slice(1, count + drawThisManyPhotos).forEach((value) => {
         if (!(value.Key in imageLinks)) {
           imageLinks[value.Key] = (
             <img
