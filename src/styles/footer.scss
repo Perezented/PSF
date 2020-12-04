@@ -16,4 +16,21 @@
     margin: 0 auto 1%;
   }
   @include headerfootercolor;
+  @media (max-width: $breakpoint-tablet) {
+    width: 100%;
+    padding: 0.2% 0;
+    display: block;
+    position: initial;
+    ul {
+      display: flex;
+      padding: 0;
+      width: 100%;
+      a {
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        width: 100%;
+        padding: 10% 3%;
+        margin: 1% 0;
+      }
+    }
+  }
 }
