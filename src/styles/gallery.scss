@@ -4,13 +4,13 @@
     margin: auto;
     height: 39vh;
     padding: 1%;
-    @media (max-width: $breakpoint-phone) {
-      height: 20vh;
-    }
   }
   @media (max-width: $breakpoint-underhd) {
     margin: 1% 0;
     .imgs {
+      @media (max-width: $breakpoint-phone) {
+        height: 20vh;
+      }
       height: 25vh;
     }
   }
