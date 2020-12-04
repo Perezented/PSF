@@ -6,7 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <meta name="Pro-Select Flooring for commercial flooring needs throughout the Great Plains of Oklahoma and nearby states, such as Arkansas, Kansas, and Utah. We focus on hospitals, schools, newly built buildings, and more. " />
     <App />
   </React.StrictMode>,
   document.getElementById("root")

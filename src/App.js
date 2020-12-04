@@ -29,7 +29,10 @@ function App() {
         <Header />
         <div className="fade">
           <Switch>
-            <Route exact path="/">
+            <Route exact path={"/PSF"}>
+              <HomePage />
+            </Route>
+            <Route exact path={"/"}>
               <HomePage />
             </Route>
             <Route exact path="/contact">
