@@ -41,7 +41,7 @@ nav {
       ul {
         li {
           a {
-            padding: 3%;
+            padding: 6% 3%;
             width: 100%;
             border: 2px solid rgba(255, 255, 255, 0.2);
           }
@@ -59,13 +59,9 @@ nav {
       p {
         font-size: 1.5rem;
       }
-      display: grid;
       padding: 0;
 
       a {
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        width: 100%;
-        padding: 3%;
         margin: 1% 0;
         font-size: 1.5rem;
       }
