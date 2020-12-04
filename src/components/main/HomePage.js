@@ -1,10 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import TriSection from "../subhome/TriSection";
 import Banner from "../sub/Banner";
 import WeDoMore from "../subhome/WeDoMore";
 import Spacer from "../sub/Spacer";
 import { useScrolling } from "../helper/useScrolling";
 export default function HomePage() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
   // upon load up, classes are added using js to hide selected elements
   useEffect(() => {
     let multiDivFromSection = document.querySelectorAll("section div div");
@@ -58,7 +68,10 @@ export default function HomePage() {
   function addingAppear(array, direction) {
     array.forEach((value, index) => {
       if (value !== undefined) {
-        let currSectionTop = value.getBoundingClientRect().top;
+        let currSectionTop =
+          windowWidth > 800
+            ? value.getBoundingClientRect().top
+            : value.getBoundingClientRect().top - 135;
         if (index !== array.length) {
           if (currSectionTop <= theFractionIrandomlyDecideOn) {
             value.classList.add(direction);
