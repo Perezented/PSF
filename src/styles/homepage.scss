@@ -4,26 +4,50 @@
   h2 {
     margin: 3% 0;
   }
+  @media (max-width: $breakpoint-tablet) {
+    display: initial;
+    margin: 10% 0;
+  }
 
   .triSection {
     display: grid;
+    @media (max-width: $breakpoint-underhd) {
+      grid-template-columns: 1fr;
+    }
     grid-template-columns: repeat(3, 1fr);
     gap: 2%;
     color: white;
     .hospitals {
       @include background("../img/IMG_0335.jpg");
+      background-repeat: no-repeat;
+      @media (max-width: $breakpoint-underhd) {
+        background-position-y: center;
+      }
     }
     .school {
       @include background("../img/IMG_4081.jpg");
+      background-repeat: no-repeat;
+      @media (max-width: $breakpoint-underhd) {
+        background-position-y: center;
+        background-size: cover;
+      }
     }
     .floortypes {
       @include background("../img/IMG_3349.jpg");
+      background-repeat: no-repeat;
+      @media (max-width: $breakpoint-underhd) {
+        background-position-y: center;
+      }
     }
     div {
-      padding: 2%;
+      @media (max-width: $breakpoint-underhd) {
+        padding-bottom: 15%;
+      }
+      padding: 10% 2%;
+      display: grid;
     }
     p {
-      padding: 10%;
+      padding: 2%;
       line-height: 3.5rem;
       font-size: 1.7rem;
     }
@@ -35,11 +59,15 @@
 .spacer {
   @include lighterBackground("../img/IMG_1842.jpg");
   height: 20vh;
+  background-position-x: center;
   background-position-y: 50%;
   z-index: -1;
   background-attachment: fixed;
   background-repeat: no-repeat;
   width: 100%;
+  @media (max-width: $breakpoint-underhd) {
+    margin-top: 10%;
+  }
 }
 .weDoMore {
   overflow: hidden;
@@ -57,7 +85,6 @@
       div {
         background-position-y: center;
         padding-bottom: 15%;
-        background-repeat: no-repeat;
         width: 100%;
         margin: 0;
       }
