@@ -1,5 +1,5 @@
 import React from "react";
-import "./Loader.scss";
+// import "../../styles/Loader.scss";
 export default function Loader() {
   return (
     <div className="sk-chase">

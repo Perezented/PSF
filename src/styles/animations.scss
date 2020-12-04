@@ -1,0 +1,94 @@
+.fade {
+  animation: aniin 1s ease-in;
+}
+
+@keyframes aniout {
+  from {
+    z-index: 5;
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes aniin {
+  from {
+    z-index: 5;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.notFound {
+  animation: aniout 8s ease-out;
+  position: absolute;
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+  width: 100vw;
+  text-shadow: black 0 0 2px, white 0 0 5px;
+}
+
+.invisible {
+  display: none;
+}
+.visible {
+  z-index: 5;
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.404);
+  div {
+    background-color: white;
+    width: min-content;
+    height: 90%;
+    padding: 2%;
+    margin: 5px auto;
+    img {
+      height: 99%;
+    }
+  }
+}
+
+.opacityBottom {
+  opacity: 0;
+  transform: translateY(25%);
+}
+.appearBottom {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 750ms all ease-in;
+}
+
+.opacityRight {
+  opacity: 0;
+  transform: translateX(90%);
+  transition: 750ms all ease-in;
+}
+.appearRight {
+  opacity: 1;
+  transform: translateX(0);
+}
+.opacityLeft {
+  opacity: 0;
+  transform: translateX(-90%);
+  transition: 750ms all ease-in;
+}
+.appearLeft {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.circleButton {
+  transition-duration: 250ms;
+  z-index: 6;
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  border-radius: 50%;
+  width: min-content;
+  height: min-content;
+  top: auto;
+}

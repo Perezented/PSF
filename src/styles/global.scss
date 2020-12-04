@@ -1,0 +1,52 @@
+// @use 'global';
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  height: 100%;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 800;
+  }
+  h1 {
+    font-size: 6rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 3.5rem;
+  }
+  h4 {
+    font-size: 3rem;
+  }
+  h5 {
+    font-size: 2.5rem;
+  }
+  h6 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.6rem;
+  }
+}
+
+.App {
+  text-align: center;
+}
+
+a {
+  font-size: 2rem;
+  font-weight: 600;
+  &:hover {
+    transition-duration: 500ms;
+    color: rgb(0, 102, 255);
+    text-shadow: 0 0 1px black, 0 0 2px white;
+    cursor: pointer;
+  }
+}

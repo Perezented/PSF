@@ -1,0 +1,17 @@
+button {
+  transition-duration: 250ms;
+  background-color: rgba(173, 3, 3, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0 auto;
+  border: 3px ridge white;
+  padding: 0.5% 1%;
+  &:hover {
+    transition-duration: 500ms;
+    color: white;
+    background-color: rgba(173, 3, 3, 0.9);
+    text-shadow: 0 0 1px black, 0 0 5px white;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,62 @@
+.contact,
+.join {
+  .contactMessage {
+    margin: 8vh auto 2vh;
+    font-size: 2rem;
+    width: 80%;
+  }
+  div {
+    padding: 1%;
+  }
+  .businessHours {
+    address {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 80%;
+      padding: 2%;
+      margin: 0 auto 1%;
+      width: 80%;
+      p {
+        margin: 0;
+      }
+    }
+  }
+  .flex {
+    display: flex;
+    justify-content: center;
+    .form {
+      width: 30%;
+      display: grid;
+    }
+    .field {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+    input,
+    textarea {
+      width: 23vw;
+    }
+    label {
+      font-weight: 600;
+      font-size: 1.6rem;
+    }
+  }
+  h3,
+  h4,
+  form {
+    margin: 0;
+    animation: aniin ease-in 1s;
+  }
+  .pageBanner {
+    h1,
+    h3 {
+      margin: 0 auto;
+      width: 80%;
+    }
+  }
+  .tymessage {
+    opacity: 1;
+    margin: auto 0;
+  }
+}

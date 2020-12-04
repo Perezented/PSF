@@ -1,0 +1,19 @@
+.footer {
+  color: white;
+  padding: 4% 0 2%;
+  bottom: 0;
+  p {
+    opacity: 1;
+  }
+  a {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  ul {
+    justify-content: space-around;
+    width: 60%;
+    margin: 0 auto 1%;
+  }
+  @include headerfootercolor;
+}
