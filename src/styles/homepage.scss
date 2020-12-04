@@ -4,7 +4,7 @@
   h2 {
     margin: 3% 0;
   }
-  @media (max-width: $breakpoint-tablet) {
+  @media (max-width: $breakpoint-phone) {
     display: initial;
     margin: 10% 0;
   }
