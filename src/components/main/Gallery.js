@@ -19,15 +19,13 @@ export default function Gallery() {
   const handleImageSliceCount = () => {
     let rightAboveFooter = document.getElementById("footer").getClientRects()[0]
       .y;
-
     if (rightAboveFooter - window.outerHeight <= 0) {
       setImageSliceCounter(imageSliceCounter + 4);
     }
   };
-
   useEffect(() => {
     axios
-      .get(`http://localhost:3030`)
+      .get(process.env.REACT_APP_.REACHING_LINK)
       .then((response) => {
         setImgData(response.data);
       })

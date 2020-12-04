@@ -33,7 +33,7 @@ export default function Form(props) {
   }
 
   return (
-    <div className="form">
+    <section className="form">
       <h3>
         {props.classInfo === "contact" ? "Let's Get in Touch" : "Join Our Team"}
       </h3>
@@ -64,6 +64,6 @@ export default function Form(props) {
           </button>
         </ul>
       </form>
-    </div>
+    </section>
   );
 }
