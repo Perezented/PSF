@@ -28,6 +28,7 @@
 }
 .homeImg {
   background-size: cover;
+  -webkit-background-size: cover; /* safari may need this */
   background-attachment: fixed;
   background-repeat: no-repeat;
   z-index: -1;
