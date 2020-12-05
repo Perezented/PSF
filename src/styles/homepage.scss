@@ -65,8 +65,9 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   width: 100%;
-  @media (max-width: $breakpoint-underhd) {
-    margin-top: 10%;
+  @media (max-width: $breakpoint-tablet) {
+    margin-top: 15%;
+    height: 100%;
   }
 }
 .weDoMore {
