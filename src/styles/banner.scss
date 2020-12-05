@@ -49,6 +49,13 @@
   }
 }
 
+@media (max-width: $breakpoint-phone) {
+  .img0,
+  .img1,
+  .img2 {
+    background-attachment: scroll;
+  }
+}
 .contactBannerSize {
   @include contactsBannerHeight;
   justify-content: space-evenly;
