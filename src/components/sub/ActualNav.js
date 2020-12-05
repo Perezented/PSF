@@ -5,7 +5,7 @@ export default function ActualNav(props) {
     <nav>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/PSF">Home</Link>
         </li>
         <li>
           <Link to="/gallery">Gallery</Link>
