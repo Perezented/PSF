@@ -50,29 +50,39 @@ export default function Gallery() {
 
   // object to hold the links of images as keys and img tags as values
   let imageLinks = {};
+  function imgModalClickHandler(e, key, index, arr) {
+    let curr = {};
+    curr["index"] = index;
+    curr["key"] = key;
+    if (arr[index - 1] !== undefined) {
+      curr["prev"] = arr[index - 1];
+    }
+    if (arr[index + 1] !== undefined) {
+      curr["nex"] = arr[index + 1];
+    }
 
+    setCurrImg(curr);
+  }
   // pushes links to image tags from s3, returns an object's values of html image elements
   function fillImages() {
     let count = imageSliceCounter;
 
     if (imgData.length > 0) {
-      imgData.slice(1, count + drawThisManyPhotos).forEach((value) => {
-        if (!(value.Key in imageLinks)) {
-          imageLinks[value.Key] = (
-            <img
-              src={process.env.REACT_APP_.S3_LINK + value.Key}
-              alt=""
-              key={value.Key}
-              className="imgs"
-              onClick={(e) => {
-                let curr =
-                  e.target.src.split("/")[3] + "/" + e.target.src.split("/")[4];
-                setCurrImg(curr);
-              }}
-            />
-          );
-        }
-      });
+      imgData
+        .slice(1, count + drawThisManyPhotos)
+        .forEach((value, i, imgDataSlice) => {
+          if (!(value.Key in imageLinks)) {
+            imageLinks[value.Key] = (
+              <img
+                src={process.env.REACT_APP_.S3_LINK + value.Key}
+                alt=""
+                key={value.Key}
+                className="imgs"
+                onClick={(e) => imgModalClickHandler(e, value, i, imgDataSlice)}
+              />
+            );
+          }
+        });
     }
 
     return Object.values(imageLinks);
@@ -89,7 +99,12 @@ export default function Gallery() {
       ) : (
         <>
           <h1>Gallery section of Pro-Select work</h1>
-          <ImgModal imgModal={currImg} setCurrImg={setCurrImg} />
+          <ImgModal
+            imgModal={currImg}
+            setCurrImg={setCurrImg}
+            allImgs={imgData.slice(1)}
+            imgModalClickHandler={imgModalClickHandler}
+          />
           <div className="imgContainer" id='"imgContainer"'>
             {images.length > 0 ? fillImages() : <Loader />}
           </div>
