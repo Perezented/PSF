@@ -98,7 +98,7 @@ export default function Gallery() {
         </>
       ) : (
         <>
-          <h1>Gallery section of Pro-Select work</h1>
+          <h1>Gallery of Pro-Select work</h1>
           <ImgModal
             imgModal={currImg}
             setCurrImg={setCurrImg}

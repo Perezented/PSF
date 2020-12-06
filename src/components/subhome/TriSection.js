@@ -29,7 +29,7 @@ export default function TriSection() {
             spirited as possible. We can assist in renovating your building(s)
             as well as assist in getting your newly constructed building all
             ready to be walked on! We own machines to make the demo work quicker
-            and have all pre-existing flooring system gets a reboot by
+            and have all pre-existing flooring systems get a reboot by
             releveling and patch work where needed.
           </p>
         </div>
@@ -41,10 +41,10 @@ export default function TriSection() {
             has been actively keeping up with the latest technologies. We can
             also go old school and work with something more classic if that is
             what is desired. We are comfortable with all floor types from
-            Carpet, VCT, LVT, Ceramic, Sheet Vynal, you name it, we do it!
+            Carpet, VCT, LVT, Ceramic, Sheet Vinyl, you name it, we do it!
             Rubber base is installed as well for floor types that require the
             base. You do not get half jobs marked as completed, you get the full
-            package. We can work on gym floors, to sheet vynal hallways, to
+            package. We can work on gym floors, to sheet vinyl hallways, to
             ceramic for bathrooms. Give us the challenge and we will handle it
             with ease.
           </p>
