@@ -13,6 +13,9 @@ export default function ImgModal(props) {
       onClick={(e) => {
         props.setCurrImg();
       }}
+      onTouchStart={(e) => {
+        e.stopPropagation();
+      }}
     >
       <div>
         {props.imgModal !== undefined && (
@@ -20,16 +23,20 @@ export default function ImgModal(props) {
             id={props.imgModal.key.Key}
             onTouchMove={(e) => {
               handleTouchMove(e);
+              e.stopPropagation();
             }}
             onTouchEnd={(e) => {
-              if (xMoves[0] > xMoves[xMoves.length - 1]) {
+              if (props.imgModal.nex && xMoves[0] > xMoves[xMoves.length - 1]) {
                 props.imgModalClickHandler(
                   e,
                   props.imgModal.nex,
                   props.imgModal.index + 1,
                   props.allImgs
                 );
-              } else if (xMoves[xMoves.length - 1] > xMoves[0]) {
+              } else if (
+                props.imgModal.prev &&
+                xMoves[xMoves.length - 1] > xMoves[0]
+              ) {
                 props.imgModalClickHandler(
                   e,
                   props.imgModal.prev,
