@@ -7,6 +7,9 @@ export default function ImgModal(props) {
     filler.push(e.touches[0].pageX);
     setXMoves(filler);
   };
+  props.imgModal
+    ? document.body.classList.add("overflow")
+    : document.body.classList.remove("overflow");
   return (
     <section
       className={props.imgModal ? "visible" : "invisible"}

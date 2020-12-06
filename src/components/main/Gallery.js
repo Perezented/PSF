@@ -90,9 +90,7 @@ export default function Gallery() {
   let images = fillImages();
 
   return (
-    <section
-      className={currImg ? "overflow fade gallery" : "" + " gallery fade"}
-    >
+    <section className={"gallery fade"}>
       {error ? (
         <>
           <h4>ERROR</h4>
