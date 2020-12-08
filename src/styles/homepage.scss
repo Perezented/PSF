@@ -128,11 +128,13 @@
       @include lighterBackground("../img/IMG_2378.jpg");
       grid-area: 1/1/3/3;
       background-position-y: 60%;
+      height: 100%;
     }
     .subCeramic1 {
       @include lighterBackground("../img/IMG_1800.jpg");
       grid-area: 3/1/5/3;
       background-position-y: 50%;
+      height: 100%;
     }
   }
   .vct {
@@ -160,7 +162,8 @@
   .shotblast {
     grid-area: 2/1/4/3;
     flex-direction: column;
-    @include lighterBackground("../img/IMG_3439.jpg");
+    @include lighterBackground("../img/IMG_1615comp_.jpg");
+    background-position-y: 91%;
   }
   .carpet {
     grid-area: 4/2/5/3;
