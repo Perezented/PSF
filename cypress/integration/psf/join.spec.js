@@ -2,7 +2,7 @@
 
 context("Renders join us page", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000/join/");
+    cy.visit("http://localhost:3000/joinUs/");
   });
   it("contains main h1", () => {
     cy.contains(/Join our team at Pro-Select Flooring/i);
