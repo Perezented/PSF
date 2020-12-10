@@ -37,6 +37,13 @@
 - run: `npm install` to download all dependencies.
 - run: `npm start` to start your local react development server.
 
+#### Cypress tests ran
+
+- [homepage](https://dashboard.cypress.io/projects/9dp36s/runs/2/specs/fe9dbf30-bd2d-4b0f-9a10-4888b85ec17f/video)
+- [gallery](https://dashboard.cypress.io/projects/9dp36s/runs/2/specs/fd17645a-baf1-4b1d-8bb0-d62c2a8700ef/video)
+- [contact_page](https://dashboard.cypress.io/projects/9dp36s/runs/2/specs/a126e57d-3581-4986-a605-b88c4de0bda4/video)
+- [join_us_page](https://dashboard.cypress.io/projects/9dp36s/runs/2/specs/45b2a103-aa98-41c9-947a-f512bd4119a7/video)
+
 ## Scripts
 
 > Enter `npm command_name` into your terminal to run scripts below
