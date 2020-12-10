@@ -1,5 +1,9 @@
-# PSF
+# Pro-Select Flooring LLC Website
 
+<p align='center'>
+<img width="90%" src='./src/img/psfhome.gif' alt='Preview of what the Pro-Select Flooring website landing page'/>
+<img width="90%" src='./src/img/psfGall.gif' alt='Gallery page for PSF'/>
+</p>
 ## Website for Pro-Select Flooring LLC
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
