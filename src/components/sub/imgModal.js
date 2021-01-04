@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 export default function ImgModal(props) {
-  const [xMoves, setXMoves] = useState([]);
+  const [screenXPos, setScreenXPos] = useState([]);
   const handleTouchMove = (e) => {
-    let filler = xMoves;
+    let filler = screenXPos;
     filler.push(e.touches[0].pageX);
-    setXMoves(filler);
+    setScreenXPos(filler);
   };
   props.imgModal
     ? document.body.classList.add("overflow")
@@ -29,7 +29,10 @@ export default function ImgModal(props) {
               e.stopPropagation();
             }}
             onTouchEnd={(e) => {
-              if (props.imgModal.nex && xMoves[0] > xMoves[xMoves.length - 1]) {
+              if (
+                props.imgModal.nex &&
+                screenXPos[0] > screenXPos[screenXPos.length - 1]
+              ) {
                 props.imgModalClickHandler(
                   e,
                   props.imgModal.nex,
@@ -38,7 +41,7 @@ export default function ImgModal(props) {
                 );
               } else if (
                 props.imgModal.prev &&
-                xMoves[xMoves.length - 1] > xMoves[0]
+                screenXPos[screenXPos.length - 1] > screenXPos[0]
               ) {
                 props.imgModalClickHandler(
                   e,
@@ -47,12 +50,12 @@ export default function ImgModal(props) {
                   props.allImgs
                 );
               }
-              setXMoves([]);
+              setScreenXPos([]);
             }}
             onClick={(e) => {
               e.stopPropagation();
             }}
-            src={process.env.REACT_APP_.S3_LINK0 + props.imgModal.key.Key}
+            src={process.env.REACT_APP_.PRODUCTION_LINK + props.imgModal.key}
             alt=""
           />
         )}
