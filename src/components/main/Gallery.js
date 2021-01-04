@@ -27,7 +27,7 @@ export default function Gallery() {
   // Pulls the image data from the node server
   useEffect(() => {
     axios
-      .get(process.env.REACT_APP_.REACHING_LINK + "images")
+      .get(process.env.REACT_APP_.PRODUCTION_COMPRESSED_LINK)
       .then((response) => {
         setImgData(response.data);
       })
@@ -50,33 +50,35 @@ export default function Gallery() {
 
   // object to hold the links of images as keys and img tags as values
   let imageLinks = {};
-  function imgModalClickHandler(e, key, index, arr) {
+  function imgModalClickHandler(e, imgName, index, imagesArray) {
     let curr = {};
+    console.log(imgName, index, imagesArray);
     curr["index"] = index;
-    curr["key"] = key;
-    if (arr[index - 1] !== undefined) {
-      curr["prev"] = arr[index - 1];
+    curr["key"] = imgName;
+    if (imagesArray[index - 1] !== undefined) {
+      curr["prev"] = imagesArray[index - 1];
     }
-    if (arr[index + 1] !== undefined) {
-      curr["nex"] = arr[index + 1];
+    if (imagesArray[index + 1] !== undefined) {
+      curr["nex"] = imagesArray[index + 1];
     }
+    console.log("curr", curr);
 
     setCurrImg(curr);
   }
   // pushes links to image tags from s3, returns an object's values of html image elements
   function fillImages() {
     let count = imageSliceCounter;
-
-    if (imgData.length > 0) {
-      imgData
+    if (imgData.images_array !== undefined) {
+      imgData.images_array
         .slice(1, count + drawThisManyPhotos)
         .forEach((value, i, imgDataSlice) => {
-          if (!(value.Key in imageLinks)) {
-            imageLinks[value.Key] = (
+          if (!(value in imageLinks)) {
+            console.log(value);
+            imageLinks[value] = (
               <img
-                src={process.env.REACT_APP_.S3_LINK + value.Key}
+                src={process.env.REACT_APP_.PRODUCTION_COMPRESSED_LINK + value}
                 alt=""
-                key={value.Key}
+                key={value}
                 className="imgs"
                 onClick={(e) => imgModalClickHandler(e, value, i, imgDataSlice)}
               />
@@ -88,7 +90,6 @@ export default function Gallery() {
     return Object.values(imageLinks);
   }
   let images = fillImages();
-
   return (
     <section className={"gallery fade"}>
       {error ? (
@@ -102,7 +103,7 @@ export default function Gallery() {
           <ImgModal
             imgModal={currImg}
             setCurrImg={setCurrImg}
-            allImgs={imgData.slice(1)}
+            allImgs={imgData.images_array}
             imgModalClickHandler={imgModalClickHandler}
           />
           <div className="imgContainer" id='"imgContainer"'>
