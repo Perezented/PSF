@@ -14,7 +14,7 @@ export default function WeDoMore() {
           <h5>For demolition work</h5>
         </div>
         <div className="vynal">
-          <h2>Sheet Vynal</h2>
+          <h2>Sheet Vinyl</h2>
         </div>
         <div className="shotblast">
           <h2>Shot Blasting</h2>
