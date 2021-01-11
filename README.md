@@ -1,10 +1,9 @@
-# Pro-Select Flooring LLC Website
+<h1 align='center'>Pro-Select Flooring LLC</h1>
 
 <p align='center'>
 <img width="90%" src='./src/img/psfhome.gif' alt='Preview of what the Pro-Select Flooring website landing page'/>
 <img width="90%" src='./src/img/psfGall.gif' alt='Gallery page for PSF'/>
 </p>
-## Website for Pro-Select Flooring LLC
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-^17.0.1-blue.svg)
@@ -15,6 +14,11 @@
 ![gh--pages](https://img.shields.io/badge/gh--pages-^3.1.0-default?style=flat-square)
 ![node-sass](https://img.shields.io/badge/node--sass-%5E4.14.1-darkgreen?style=flat-square)
 ![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)
+
+## Website for Pro-Select Flooring LLC
+
+[Pro-SelectFlooring.com](https://pro-selectflooring.com)
+
 
 ### Key Features
 
@@ -44,7 +48,7 @@
 - [contact_page](https://dashboard.cypress.io/projects/9dp36s/runs/2/specs/a126e57d-3581-4986-a605-b88c4de0bda4/video)
 - [join_us_page](https://dashboard.cypress.io/projects/9dp36s/runs/2/specs/45b2a103-aa98-41c9-947a-f512bd4119a7/video)
 
-## Scripts
+#### Scripts
 
 > Enter `npm command_name` into your terminal to run scripts below
 
@@ -58,7 +62,7 @@
     "e2e": "cypress open"
 ```
 
-# Contributing
+## Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
 
@@ -85,7 +89,7 @@ Remember that this project is licensed under the MIT license, and by submitting 
 
 ## Bugs/Issues
 
--
+- Slow warm up time for gallery
 
 ## Future Improvements
 
