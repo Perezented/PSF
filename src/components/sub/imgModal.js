@@ -55,7 +55,10 @@ export default function ImgModal(props) {
             onClick={(e) => {
               e.stopPropagation();
             }}
-            src={process.env.REACT_APP_.PRODUCTION_LINK + props.imgModal.key}
+            src={
+              "https://psf-node-images.herokuapp.com/images/" +
+              props.imgModal.key
+            }
             alt=""
           />
         )}
