@@ -57,7 +57,13 @@ export default function Form(props) {
             <label className="message" htmlFor="message">
               Message
             </label>
-            <textarea name="message" id="message" rows="4" required />
+            <textarea
+              name="message"
+              id="message"
+              rows="4"
+              minlength="150"
+              required
+            />
           </div>
         </div>
         <ul className="actions">
