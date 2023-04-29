@@ -56,7 +56,7 @@ export default function ImgModal(props) {
               e.stopPropagation();
             }}
             src={
-              "https://psf-node-images.herokuapp.com/images/" +
+              "https://psf-node-images.onrender.com/images/" +
               props.imgModal.key
             }
             alt=""

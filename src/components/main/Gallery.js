@@ -27,7 +27,7 @@ export default function Gallery() {
   // Pulls the image data from the node server
   useEffect(() => {
     axios
-      .get("https://psf-node-images.herokuapp.com/compressed_images/")
+      .get("https://psf-node-images.onrender.com/compressed_images/")
       .then((response) => {
         setImgData(response.data);
       })
@@ -77,7 +77,7 @@ export default function Gallery() {
             imageLinks[value] = (
               <img
                 src={
-                  "https://psf-node-images.herokuapp.com/compressed_images/" +
+                  "https://psf-node-images.onrender.com/compressed_images/" +
                   value
                 }
                 alt=""
