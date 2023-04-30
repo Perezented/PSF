@@ -12,7 +12,7 @@
 ![axios](https://img.shields.io/badge/axios-^0.21.0-yellow?style=flat-square)
 ![emailjs--com](https://img.shields.io/badge/emailjs--com-^2.6.4-red?style=flat-square)
 ![gh--pages](https://img.shields.io/badge/gh--pages-^3.1.0-default?style=flat-square)
-![node-sass](https://img.shields.io/badge/node--sass-%5E4.14.1-darkgreen?style=flat-square)
+<!-- ![node-sass](https://img.shields.io/badge/node--sass-%5E4.14.1-darkgreen?style=flat-square) -->
 ![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)
 
 ## Website for Pro-Select Flooring LLC
