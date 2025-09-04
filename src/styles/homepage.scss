@@ -1,199 +1,204 @@
 .homeTriDesc {
-  width: 80%;
-  margin: 3% auto 4%;
-  h2 {
-    margin: 3% 0;
-  }
-  @media (max-width: $breakpoint-phone) {
-    display: initial;
-    margin: 10% 0;
-  }
+	width: 80%;
+	margin: 3% auto 4%;
+	h2 {
+		margin: 3% 0;
+	}
+	@media (max-width: $breakpoint-phone) {
+		display: initial;
+		margin: 10% 0;
+	}
 
-  .triSection {
-    display: grid;
-    @media (max-width: $breakpoint-underhd) {
-      grid-template-columns: 1fr;
-    }
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2%;
-    color: white;
-    .hospitals {
-      @include background("../img/IMG_0335.jpg");
-      background-repeat: no-repeat;
-      @media (max-width: $breakpoint-underhd) {
-        background-position-y: center;
-      }
-    }
-    .school {
-      @include background("../img/IMG_4081.jpg");
-      background-repeat: no-repeat;
-      @media (max-width: $breakpoint-underhd) {
-        background-position-y: center;
-        background-size: cover;
-      }
-    }
-    .floortypes {
-      @include background("../img/IMG_3349.jpg");
-      background-repeat: no-repeat;
-      @media (max-width: $breakpoint-underhd) {
-        background-position-y: center;
-      }
-    }
-    div {
-      @media (max-width: $breakpoint-underhd) {
-        padding-bottom: 15%;
-      }
-      padding: 10% 2%;
-      display: grid;
-    }
-    p {
-      padding: 2%;
-      line-height: 3.5rem;
-      font-size: 1.7rem;
-    }
-    i {
-      padding: 3%;
-    }
-  }
+	.triSection {
+		display: grid;
+		@media (max-width: $breakpoint-underhd) {
+			grid-template-columns: 1fr;
+		}
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2%;
+		color: white;
+		.hospitals {
+			@include background("../img/IMG_0335.jpg");
+			background-repeat: no-repeat;
+			@media (max-width: $breakpoint-underhd) {
+				background-position-y: center;
+			}
+		}
+		.school {
+			@include background("../img/IMG_4081.jpg");
+			background-repeat: no-repeat;
+			@media (max-width: $breakpoint-underhd) {
+				background-position-y: center;
+				background-size: cover;
+			}
+		}
+		.floortypes {
+			@include background("../img/IMG_3349.jpg");
+			background-repeat: no-repeat;
+			@media (max-width: $breakpoint-underhd) {
+				background-position-y: center;
+			}
+		}
+		div {
+			@media (max-width: $breakpoint-underhd) {
+				padding-bottom: 15%;
+			}
+			padding: 10% 2%;
+			display: grid;
+		}
+		p {
+			padding: 2%;
+			line-height: 3.5rem;
+			font-size: 1.7rem;
+		}
+		i {
+			padding: 3%;
+		}
+	}
 }
 .spacer {
-  @include lighterBackground("../img/IMG_1842.jpg");
-  height: 20vh;
-  background-position-x: center;
-  background-position-y: 50%;
-  z-index: -1;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  width: 100%;
-  @media (max-width: $breakpoint-tablet) {
-    margin-top: 15%;
-    height: 100%;
-  }
+	@include lighterBackground("../img/IMG_1842.jpg");
+	height: 20vh;
+	background-position-x: center;
+	background-position-y: 50%;
+	z-index: -1;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	width: 100%;
+	@media (max-width: $breakpoint-tablet) {
+		margin-top: 15%;
+		height: 100%;
+	}
 }
 .weDoMore {
-  overflow: hidden;
-  width: 80%;
-  margin: 3% auto;
-  @media (max-width: $breakpoint-phone) {
-    width: 100%;
-  }
-  .gridHolder {
-    @media (max-width: $breakpoint-underhd) {
-      display: flex;
-      flex-direction: column;
-      height: auto;
-      gap: 10px;
-      div {
-        background-position-y: center;
-        padding-bottom: 25%;
-        width: 100%;
-        margin: 0;
-      }
-    }
-    color: rgb(255, 255, 255);
-    display: grid;
-    height: 150vh;
-    gap: 1%;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    div {
-      display: flex;
-      justify-content: center;
-      background-repeat: no-repeat;
-      align-items: center;
-      h2 {
-        font-size: 4rem;
-        text-shadow: 0 0 15px black;
-      }
-    }
-  }
-  .gridHolder .ceramic {
-    grid-area: 3/3/5/5;
-    background-position-y: 90%;
-    // @include lighterBackground("../img/IMG_1800.jpg");
-    display: grid;
+	overflow: hidden;
+	width: 80%;
+	margin: 3% auto;
+	@media (max-width: $breakpoint-phone) {
+		width: 100%;
+	}
+	@media (max-width: $breakpoint-tablet) {
+		.gridHolder .ceramic {
+			padding-bottom: 4rem;
+		}
+	}
+	.gridHolder {
+		@media (max-width: $breakpoint-underhd) {
+			display: flex;
+			flex-direction: column;
+			height: auto;
+			gap: 10px;
+			div {
+				background-position-y: center;
+				padding-bottom: 25%;
+				width: 100%;
+				margin: 0;
+			}
+		}
+		color: rgb(255, 255, 255);
+		display: grid;
+		height: 150vh;
+		gap: 1%;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(5, 1fr);
+		div {
+			display: flex;
+			justify-content: center;
+			background-repeat: no-repeat;
+			align-items: center;
+			h2 {
+				font-size: 4rem;
+				text-shadow: 0 0 15px black;
+			}
+		}
+	}
+	.gridHolder .ceramic {
+		grid-area: 3/3/5/5;
+		background-position-y: 90%;
+		// @include lighterBackground("../img/IMG_1800.jpg");
+		display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    h2 {
-      grid-area: 2/1/4/4;
-      z-index: 1;
-    }
-    div {
-      width: 100%;
-      height: 100%;
-      border: 1px solid white;
-    }
-    .subCeramic0 {
-      @include lighterBackground("../img/IMG_2378.jpg");
-      grid-area: 1/1/3/3;
-      background-position-y: 60%;
-      height: 100%;
-    }
-    .subCeramic1 {
-      @include lighterBackground("../img/IMG_1800.jpg");
-      grid-area: 3/1/5/3;
-      background-position-y: 50%;
-      height: 100%;
-    }
-  }
-  .vct {
-    grid-area: 5/1/6/2;
-    @include lighterBackground("../img/IMG_4597.jpg");
-    background-position-y: 90%;
-  }
-  .flashcove {
-    grid-area: 1/2/2/3;
-    @include lighterBackground("../img/IMG_4417.jpg");
-    background-position-y: 75%;
-    background-position-x: 50%;
-    background-size: 200%;
-  }
-  .leveling {
-    grid-area: 4/1/5/2;
-    background-position-y: 90%;
-    @include lighterBackground("../img/IMG_4616.jpg");
-  }
-  .mrs {
-    grid-area: 1/1/2/2;
-    background-position-y: 90%;
-    @include lighterBackground("../img/IMG_0376.jpg");
-  }
-  .shotblast {
-    grid-area: 2/1/4/3;
-    flex-direction: column;
-    @include lighterBackground("../img/IMG_1615comp_.jpg");
-    background-position-y: 91%;
-  }
-  .carpet {
-    grid-area: 4/2/5/3;
-    @include lighterBackground("../img/IMG_3328.jpg");
-    background-position-y: bottom;
-    background-position-x: right;
-    background-size: 150%;
-  }
-  .bronco {
-    grid-area: 1/3/3/4;
-    @include lighterBackground("../img/IMG_3439.jpg");
-    background-position-x: 60%;
-    display: flex;
-    flex-direction: column;
-  }
-  .vynal {
-    @include lighterBackground("../img/IMG_0481.jpg");
-    grid-area: 1/4/3/5;
-    background-position-x: center;
-  }
-  .nora {
-    @include lighterBackground("../img/IMG_4186.jpg");
-    grid-area: 5/2/6/4;
-    background-position-y: 50%;
-  }
-  .more {
-    @include lighterBackground("../img/IMG_4012.jpg");
-    grid-area: 5/4/6/5;
-    display: flex;
-    flex-direction: column;
-    background-position-y: bottom;
-  }
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		h2 {
+			grid-area: 2/1/4/4;
+			z-index: 1;
+		}
+		div {
+			width: 100%;
+			height: 100%;
+			border: 1px solid white;
+		}
+		.subCeramic0 {
+			@include lighterBackground("../img/IMG_2378.jpg");
+			grid-area: 1/1/3/3;
+			background-position-y: 60%;
+			height: 100%;
+		}
+		.subCeramic1 {
+			@include lighterBackground("../img/IMG_1800.jpg");
+			grid-area: 3/1/5/3;
+			background-position-y: 50%;
+			height: 100%;
+		}
+	}
+	.vct {
+		grid-area: 5/1/6/2;
+		@include lighterBackground("../img/IMG_4597.jpg");
+		background-position-y: 90%;
+	}
+	.flashcove {
+		grid-area: 1/2/2/3;
+		@include lighterBackground("../img/IMG_4417.jpg");
+		background-position-y: 75%;
+		background-position-x: 50%;
+		background-size: 200%;
+	}
+	.leveling {
+		grid-area: 4/1/5/2;
+		background-position-y: 90%;
+		@include lighterBackground("../img/IMG_4616.jpg");
+	}
+	.mrs {
+		grid-area: 1/1/2/2;
+		background-position-y: 90%;
+		@include lighterBackground("../img/IMG_0376.jpg");
+	}
+	.shotblast {
+		grid-area: 2/1/4/3;
+		flex-direction: column;
+		@include lighterBackground("../img/IMG_1615comp_.jpg");
+		background-position-y: 91%;
+	}
+	.carpet {
+		grid-area: 4/2/5/3;
+		@include lighterBackground("../img/IMG_3328.jpg");
+		background-position-y: bottom;
+		background-position-x: right;
+		background-size: 150%;
+	}
+	.bronco {
+		grid-area: 1/3/3/4;
+		@include lighterBackground("../img/IMG_3439.jpg");
+		background-position-x: 60%;
+		display: flex;
+		flex-direction: column;
+	}
+	.vynal {
+		@include lighterBackground("../img/IMG_0481.jpg");
+		grid-area: 1/4/3/5;
+		background-position-x: center;
+	}
+	.nora {
+		@include lighterBackground("../img/IMG_4186.jpg");
+		grid-area: 5/2/6/4;
+		background-position-y: 50%;
+	}
+	.more {
+		@include lighterBackground("../img/IMG_4012.jpg");
+		grid-area: 5/4/6/5;
+		display: flex;
+		flex-direction: column;
+		background-position-y: bottom;
+	}
 }

@@ -61,7 +61,7 @@ export default function Form(props) {
               name="message"
               id="message"
               rows="4"
-              minlength="150"
+              minLength="150"
               required
             />
           </div>

@@ -1,7 +1,7 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import Typed from "typed.js";
 import ImgModal from "../sub/imgModal";
-import Loader from "../sub/Loader";
 export default function Gallery() {
   const drawThisManyPhotos = 7;
   // const scrollData = useScrolling();
@@ -48,9 +48,9 @@ export default function Gallery() {
   }, [ imageSliceCounter ]);
 
   // object to hold the links of images as keys and img tags as values
-  let imageLinks = {};
+  const imageLinks = {};
   function imgModalClickHandler(e, imgName, index, imagesArray) {
-    let curr = {};
+    const curr = {};
     curr.index = index;
     curr.key = imgName;
     if (imagesArray[ index - 1 ] !== undefined) {
@@ -62,7 +62,7 @@ export default function Gallery() {
 
     setCurrImg(curr);
   }
-  // pushes links to image tags from s3, returns an object's values of html image elements
+  // fills the imageLinks object with img tags and returns an array of the values
   function fillImages() {
     if (imgData.images_array !== undefined) {
       imgData.images_array
@@ -87,7 +87,8 @@ export default function Gallery() {
 
     return Object.values(imageLinks);
   }
-  let images = fillImages();
+
+  const images = fillImages();
   return (
     <section className={"gallery fade"}>
       {error ? (
@@ -105,10 +106,100 @@ export default function Gallery() {
             imgModalClickHandler={imgModalClickHandler}
           />
           <div className="imgContainer" id='"imgContainer"'>
-            {images.length > 0 ? fillImages() : <Loader />}
+            {images.length > 0 ? fillImages() : <FillerImages images={images} drawThisManyPhotos={drawThisManyPhotos} />}
           </div>
         </>
       )}
     </section>
   );
 }
+
+const FillerImages = (props) => {
+  const { drawThisManyPhotos } = props;
+  // Ref for the typed.js element
+  const typedRef = useRef(null);
+
+  useEffect(() => {
+    const typed = new Typed(typedRef.current, {
+      strings: [
+        "Please wait a bit, this may take a few seconds!",
+        "Please wait a bit, your gallery is loading!",
+        "Fetching gallery photos...",
+        "Fetching images from the cloud...",
+        "Fetching 1010's...",
+        "Server is loading images...",
+        "Server is loading gallery photos...",
+        "Server is loading the images requested...",
+        "Server is loading from the cloud...",
+        "Almost there, loading your images!",
+        "Hang tight, preparing your gallery...",
+        "Loading gallery photos...",
+        "Loading your images...",
+        "Retrieving images from the cloud...",
+      ],
+      typeSpeed: 40,
+      backSpeed: 20,
+      backDelay: 2000,
+      loop: true
+    });
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
+  const [centered, setCentered] = useState(false);
+
+  useEffect(() => {
+    // Alternate animation every 3 seconds
+    const interval = setInterval(() => {
+      setCentered((prev) => !prev);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <>
+      <div style={{ width: '100%', textAlign: 'center', margin: '16px 0' }}>
+        <h4>
+          <span ref={typedRef} />{""}
+        </h4>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: centered ? "center" : "space-around",
+          alignItems: "center",
+          flexWrap: "wrap",
+          transition: "justify-content 1s cubic-bezier(.68,-0.55,.27,1.55)",
+          minHeight: "220px",
+        }}
+      >
+        {Array.from({ length: drawThisManyPhotos }).map((_, i) => {
+          const isPortrait = Math.random() > 0.5;
+          return (
+            <div
+              key={`loader-img-${i}`}
+              style={{
+                background: "linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%)",
+                borderRadius: "8px",
+                margin: centered ? "8px" : "24px",
+                width: isPortrait ? "120px" : "180px",
+                height: isPortrait ? "180px" : "120px",
+                animation: "shimmer 5s infinite linear",
+                backgroundSize: "400px 100%",
+                transition: "margin 1s cubic-bezier(.68,-0.55,.27,1.55)",
+              }}
+              className="loader-img"
+            />
+          );
+        })}
+      </div>
+      <style>{`
+        @keyframes shimmer {
+          0% { background-position: -400px 0; }
+          100% { background-position: 400px 0; }
+        }
+      `}</style>
+    </>
+  );
+};

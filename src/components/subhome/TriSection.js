@@ -2,6 +2,7 @@ import React from "react";
 
 const cardData = [
   {
+    className: "hospitals",
     iconClass: "fas fa-hospital-user fa-4x",
     title: "Hospitals, Clinics, Doctors Offices",
     text: `Our team is accepted by multiple hospitals ranging from the states
@@ -13,6 +14,7 @@ const cardData = [
       Pro-Select to get all flooring needs fulfilled.`
   },
   {
+    className: "school",
     iconClass: "fas fa-school fa-4x",
     title: "Schools, Churches, Businesses",
     text: `We work with schools, churches, and all different kinds of
@@ -27,6 +29,7 @@ const cardData = [
       needed.`
   },
   {
+    className: "floortypes",
     iconClass: "fas fa-sort-alpha-up fa-5x",
     title: "Multiple Flooring Types",
     text: `Pro-Select Flooring is experienced with multiple flooring types and
@@ -42,9 +45,9 @@ const cardData = [
   }
 ];
 
-function TriCard({ iconClass, title, text }) {
+function TriCard({ iconClass, title, text, className }) {
   return (
-    <div className="triCard">
+    <div className={className}>
       <i className={iconClass} />
       <h4>{title}</h4>
       <p>{text}</p>
@@ -60,6 +63,7 @@ export default function TriSection() {
         {cardData.map((card, idx) => (
           <TriCard
             key={idx}
+            className={card.className}
             iconClass={card.iconClass}
             title={card.title}
             text={card.text}

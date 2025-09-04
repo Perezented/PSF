@@ -10317,6 +10317,11 @@ typed-styles@^0.0.7:
   resolved "https://registry.npmjs.org/typed-styles/-/typed-styles-0.0.7.tgz"
   integrity sha512-pzP0PWoZUhsECYjABgCGQlRGL1n7tOHsgwYv3oIiEpJwGhFTuty/YNeduxQYzXXa3Ge5BdT6sHYIQYpl4uJ+5Q==
 
+typed.js@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/typed.js/-/typed.js-2.1.0.tgz"
+  integrity sha512-bDuXEf7YcaKN4g08NMTUM6G90XU25CK3bh6U0THC/Mod/QPKlEt9g/EjvbYB8x2Qwr2p6J6I3NrsoYaVnY6wsQ==
+
 typedarray-to-buffer@^3.1.5:
   version "3.1.5"
   resolved "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-3.1.5.tgz"
@@ -10325,9 +10330,9 @@ typedarray-to-buffer@^3.1.5:
     is-typedarray "^1.0.0"
 
 "typescript@^3.2.1 || ^4", "typescript@>= 2.7", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
-  version "5.9.2"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-5.9.2.tgz"
-  integrity sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==
+  version "4.9.5"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-4.9.5.tgz"
+  integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
 
 unbox-primitive@^1.1.0:
   version "1.1.0"

@@ -1,51 +1,60 @@
 .imgContainer {
-  margin: 0 10%;
-  .imgs {
-    margin: auto;
-    height: 39vh;
-    padding: 1%;
-  }
-  @media (max-width: $breakpoint-underhd) {
-    margin: 1% 0;
-    .imgs {
-      @media (max-width: $breakpoint-phone) {
-        height: 20vh;
-      }
-      height: 25vh;
-    }
-  }
+	margin: 0 10%;
+	.imgs {
+		margin: auto;
+		height: 39vh;
+		padding: 1%;
+	}
+	@media (max-width: $breakpoint-underhd) {
+		margin: 1% 0;
+		.imgs {
+			@media (max-width: $breakpoint-phone) {
+				height: 20vh;
+			}
+			height: 25vh;
+		}
+	}
 }
 .invisible {
-  display: none;
+	display: none;
 }
 .visible {
-  z-index: 5;
-  top: 0;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.404);
-  div {
-    background-color: white;
-    width: min-content;
-    padding: 2%;
-    margin: 5px auto;
-    img {
-      height: 90vh;
-      @media (max-width: $breakpoint-tablet) {
-        width: 93vw;
-        margin: 1% auto;
-        height: auto;
-      }
-    }
-    @media (max-width: $breakpoint-tablet) {
-      margin: 15vh auto;
-    }
-    @media (max-width: $breakpoint-phone) {
-      margin: 20vh auto;
-    }
-  }
+	z-index: 5;
+	top: 0;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.404);
+	div {
+		background-color: white;
+		width: min-content;
+		padding: 2%;
+		margin: 5px auto;
+		img {
+			height: 90vh;
+			@media (max-width: $breakpoint-tablet) {
+				width: 93vw;
+				margin: 1% auto;
+				height: auto;
+			}
+		}
+		@media (max-width: $breakpoint-tablet) {
+			margin: 15vh auto;
+		}
+		@media (max-width: $breakpoint-phone) {
+			margin: 20vh auto;
+		}
+	}
 }
 .overflow {
-  overflow: hidden;
+	overflow: hidden;
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: -400px 0;
+	}
+	100% {
+		background-position: 400px 0;
+	}
 }
