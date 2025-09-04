@@ -1,10 +1,9 @@
-import { useScrolling } from "../helper/useScrolling";
 import Button from "./Button";
 
 export default function HomeBanner(props) {
   // let scrollData = useScrolling();
   return (
-    <section className={"homeImg " + props.props[0]}>
+    <section className={`homeImg ${props.props[0]}`}>
       <div
         className={
           props.props[0] === "img0"

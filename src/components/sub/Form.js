@@ -7,7 +7,7 @@ export default function Form(props) {
 
     // Only in join page will it add a job alert tag to subject line of form
     if (props.classInfo === "join") {
-      e.target.subject.value = "JOB ALERT: " + e.target.subject.value;
+      e.target.subject.value = `JOB ALERT: ${e.target.subject.value}`;
     }
     // thank you message for when a message gets sent on the site
     props.setTYMessage(true);
@@ -66,11 +66,11 @@ export default function Form(props) {
             />
           </div>
         </div>
-        <ul className="actions">
+        <div className="actions">
           <button className="join" type="submit">
             Send Message
           </button>
-        </ul>
+        </div>
       </form>
     </section>
   );

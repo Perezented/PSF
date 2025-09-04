@@ -1,24 +1,23 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useScrolling } from "../helper/useScrolling";
 import ImgModal from "../sub/imgModal";
 import Loader from "../sub/Loader";
 export default function Gallery() {
-  let drawThisManyPhotos = 7;
-  let scrollData = useScrolling();
+  const drawThisManyPhotos = 7;
+  // const scrollData = useScrolling();
   // State for s3 image data
-  const [imgData, setImgData] = useState([]);
+  const [ imgData, setImgData ] = useState([]);
   // Know how many photos to load and pull from s3
-  const [imageSliceCounter, setImageSliceCounter] = useState(1);
+  const [ imageSliceCounter, setImageSliceCounter ] = useState(1);
   // error handling
-  const [error, setError] = useState();
+  const [ error, setError ] = useState();
   // state for current scroll location and max window scroll available
-  const [currImg, setCurrImg] = useState();
+  const [ currImg, setCurrImg ] = useState();
   // gets all the image data from s3 and sets it to ImgData on gallery page load
   // On scroll, checks the footer rectangle top minus 2/3 of window height
   // If true, add 4 to imageSliceCount
   const handleImageSliceCount = () => {
-    let rightAboveFooter = document.getElementById("footer").getClientRects()[0]
+    let rightAboveFooter = document.getElementById("footer").getClientRects()[ 0 ]
       .y;
     if (rightAboveFooter - window.outerHeight <= 0) {
       setImageSliceCounter(imageSliceCounter + drawThisManyPhotos);
@@ -46,35 +45,31 @@ export default function Gallery() {
     return () => {
       window.removeEventListener("scroll", handleImageSliceCount);
     };
-  }, [imageSliceCounter]);
+  }, [ imageSliceCounter ]);
 
   // object to hold the links of images as keys and img tags as values
   let imageLinks = {};
   function imgModalClickHandler(e, imgName, index, imagesArray) {
     let curr = {};
-    console.log(imgName, index, imagesArray);
-    curr["index"] = index;
-    curr["key"] = imgName;
-    if (imagesArray[index - 1] !== undefined) {
-      curr["prev"] = imagesArray[index - 1];
+    curr.index = index;
+    curr.key = imgName;
+    if (imagesArray[ index - 1 ] !== undefined) {
+      curr.prev = imagesArray[ index - 1 ];
     }
-    if (imagesArray[index + 1] !== undefined) {
-      curr["nex"] = imagesArray[index + 1];
+    if (imagesArray[ index + 1 ] !== undefined) {
+      curr.nex = imagesArray[ index + 1 ];
     }
-    console.log("curr", curr);
 
     setCurrImg(curr);
   }
   // pushes links to image tags from s3, returns an object's values of html image elements
   function fillImages() {
-    let count = imageSliceCounter;
     if (imgData.images_array !== undefined) {
       imgData.images_array
-        .slice(1, count + drawThisManyPhotos)
+        .slice(1, imageSliceCounter + drawThisManyPhotos)
         .forEach((value, i, imgDataSlice) => {
           if (!(value in imageLinks)) {
-            console.log(value);
-            imageLinks[value] = (
+            imageLinks[ value ] = (
               <img
                 src={
                   "https://psf-node-images.onrender.com/compressed_images/" +

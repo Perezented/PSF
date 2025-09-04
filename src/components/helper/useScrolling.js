@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 // Returns current scroll and max window scroll. Dynamically changes with web page.
 // Returns the second index as undefined as it is the removal of the event listener
 export function useScrolling() {
-  const [windowScroll, setWindowScroll] = useState(window.scrollY);
-  const [maxWindowScroll, setMaxWindowScroll] = useState(
+  const [ windowScroll, setWindowScroll ] = useState(window.scrollY);
+  const [ maxWindowScroll, setMaxWindowScroll ] = useState(
     document.documentElement.scrollHeight - window.innerHeight
   );
   useEffect(() => {

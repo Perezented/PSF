@@ -3,13 +3,15 @@ import { useState } from "react";
 export default function ImgModal(props) {
   const [screenXPos, setScreenXPos] = useState([]);
   const handleTouchMove = (e) => {
-    let filler = screenXPos;
+    const filler = [...screenXPos];
     filler.push(e.touches[0].pageX);
     setScreenXPos(filler);
   };
-  props.imgModal
-    ? document.body.classList.add("overflow")
-    : document.body.classList.remove("overflow");
+  if (props.imgModal) {
+    document.body.classList.add("overflow");
+  } else {
+    document.body.classList.remove("overflow");
+  }
   return (
     <section
       className={props.imgModal ? "visible" : "invisible"}
