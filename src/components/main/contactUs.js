@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import BusinessHours from "../sub/BusinessHours";
 import Form from "../sub/Form";
 import Banner from "../sub/Banner";

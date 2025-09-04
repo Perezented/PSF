@@ -1,4 +1,3 @@
-import React from "react";
 import ActualNav from "../sub/ActualNav";
 
 export default function Header() {

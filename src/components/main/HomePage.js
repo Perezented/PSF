@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import TriSection from "../subhome/TriSection";
 import Banner from "../sub/Banner";
 import WeDoMore from "../subhome/WeDoMore";
@@ -17,9 +17,9 @@ export default function HomePage() {
   });
   // upon load up, classes are added using js to hide selected elements
   useEffect(() => {
-    let multiDivFromSection = document.querySelectorAll("section div div");
+    const multiDivFromSection = document.querySelectorAll("section div div");
     // all items on the left side of we do more section
-    let left = [
+    const left = [
       multiDivFromSection[3],
       multiDivFromSection[4],
       multiDivFromSection[8],
@@ -28,7 +28,7 @@ export default function HomePage() {
       multiDivFromSection[13]
     ];
     // all items on the left side of we do more section
-    let right = [
+    const right = [
       multiDivFromSection[6],
       multiDivFromSection[15],
       multiDivFromSection[15]
@@ -68,7 +68,7 @@ export default function HomePage() {
   function addingAppear(array, direction) {
     array.forEach((value, index) => {
       if (value !== undefined) {
-        let currSectionTop =
+        const currSectionTop =
           windowWidth > 1200
             ? value.getBoundingClientRect().top
             : value.getBoundingClientRect().top - 250;
@@ -83,12 +83,12 @@ export default function HomePage() {
     });
   }
   // Setup of specific items to have them appear once 9/10 of the screen has scrolled through
-  let sections = document.querySelectorAll("section div");
-  let ps = document.querySelectorAll("p");
-  let theFractionIrandomlyDecideOn = Math.floor((window.innerHeight / 12) * 10);
-  let multiDivFromSection = document.querySelectorAll("section div div");
+  const sections = document.querySelectorAll("section div");
+  const ps = document.querySelectorAll("p");
+  const theFractionIrandomlyDecideOn = Math.floor((window.innerHeight / 12) * 10);
+  const multiDivFromSection = document.querySelectorAll("section div div");
   // all items on the left side of we do more section
-  let left = [
+  const left = [
     multiDivFromSection[3],
     multiDivFromSection[4],
     multiDivFromSection[8],
@@ -96,20 +96,22 @@ export default function HomePage() {
     multiDivFromSection[13]
   ];
   // all items on the left side of we do more section
-  let right = [multiDivFromSection[6], multiDivFromSection[15]];
+  const right = [multiDivFromSection[6], multiDivFromSection[15]];
   addingAppear(sections, "appearBottom");
   addingAppear(ps, "appearBottom");
   // once left appears, start running appearLeft and appearRight
   left[0] && addingAppear(left, "appearLeft");
   left[0] && addingAppear(right, "appearRight");
   // props for Banner component out of homepage
-  let bannerInfo = [
+  const currentYear = new Date().getFullYear();
+  const yearsOfExperience = currentYear - 1991;
+  const bannerInfo = [
     "img0",
     "Pro-Select Flooring LLC.",
-    "29+ Years of Experience"
+    `${yearsOfExperience}+ Years of Experience`
   ];
   // uses state to constantly check the scroll on this page
-  let scrollData = useScrolling();
+  const scrollData = useScrolling();
 
   return (
     <section className="fade">
